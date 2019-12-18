@@ -55,7 +55,7 @@ int Node::getCategory()
     return _category;
 };
 
-std::complex<float>  Node::setVoltage()
+std::complex<float>  Node::getVoltage()
 {
     return _nodeVoltage;
 };
