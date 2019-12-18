@@ -23,6 +23,16 @@ void Node::setCategory( int cat )
     _category = cat;
 };
 
+void Node::setVoltage( std::complex<float> vol )
+{
+    _nodeVoltage = vol;
+};
+
+void Node::setVoltage( float re, float im )
+{
+    _nodeVoltage.real = re;
+    _nodeVoltage.imag = im;
+};
 
 int Node::getNumber()
 {
@@ -43,4 +53,9 @@ float Node::getQ()
 int Node::getCategory()
 {
     return _category;
+};
+
+std::complex<float>  Node::setVoltage()
+{
+    return _nodeVoltage;
 };
