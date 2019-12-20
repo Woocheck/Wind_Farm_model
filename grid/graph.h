@@ -45,10 +45,7 @@
                    _reactance( react ),
                    _nominalId( id ),
                    _shortcutCurrent1s( cur1s ) {};
-        
-
-
-
+                   
  };
 
 #endif
