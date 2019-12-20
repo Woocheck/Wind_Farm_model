@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <complex>
+#include <vector>
 
 class Node
 {
@@ -14,6 +15,7 @@ class Node
         float _nodeQ;
         int _category;
         std::complex<float> _nodeVoltage;
+        std::vector<Node> _childrens;
     
     public:
         Node( int number,
