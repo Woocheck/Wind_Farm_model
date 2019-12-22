@@ -31,3 +31,4 @@
 *.out
 *.app
 .vscode/launch.json
+wind_farm_model.code-workspace
