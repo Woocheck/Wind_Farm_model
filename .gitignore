@@ -32,3 +32,4 @@
 *.app
 .vscode/launch.json
 wind_farm_model.code-workspace
+.vscode/c_cpp_properties.json
