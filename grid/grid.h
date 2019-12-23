@@ -5,9 +5,11 @@
 
 class Tree
 {
-
-
+    private:
+        Node _root;
+    public:
+        Tree();
     
-}
+};
 
 #endif

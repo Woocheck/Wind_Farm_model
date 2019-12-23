@@ -1,2 +1,2 @@
 # hvcable
-High voltage cable model
+Wind Farm with high voltage 110kV cable model.

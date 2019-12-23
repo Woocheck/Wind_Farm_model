@@ -2,6 +2,7 @@
 #define _GRAPH_H_
 
 #include <string>
+#include <complex>
 
  class Graph
  {
@@ -12,6 +13,7 @@
         int _endNode {0};
     public:
         Graph(){};
+        std::complex<float> getCurrent(); 
 
  };
 
@@ -24,6 +26,9 @@
         float _crossection { 0 };
         float _resistance { 0 };
         float _reactance { 0 };
+        float _conductance { 0 };
+        float _susceptance { 0 };
+        float _lenght { 0 };
         float _nominalId { 0 };
         float _shortcutCurrent1s { 0 };
     
@@ -35,6 +40,9 @@
                    float cross,
                    float res,
                    float react,
+                   float conduct,
+                   float suscept,
+                   float lenght,
                    float id,
                    float cur1s ):
                    _elementNumber( num ),
@@ -45,6 +53,12 @@
                    _reactance( react ),
                    _nominalId( id ),
                    _shortcutCurrent1s( cur1s ) {};
+
+        std::complex<float> getCurrent();
+    private:
+        std::complex<float> getZ();
+        std::complex<float> getY();
+
                    
  };
 
