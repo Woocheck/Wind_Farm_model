@@ -51,11 +51,13 @@
                    _crossection( cross ),
                    _resistance( res ),
                    _reactance( react ),
+                   _susceptance( suscept ),
+                   _lenght( lenght ),
                    _nominalId( id ),
                    _shortcutCurrent1s( cur1s ) {};
 
         std::complex<float> getCurrent();
-    private:
+    // private:
         std::complex<float> getZ();
         std::complex<float> getY();
 
