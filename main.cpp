@@ -12,7 +12,6 @@ int main(int argc, char const *argv[])
     std::complex<float> lineY;
 
     lineZ = line.getZ();
-    lineY = line.getY();
 
     std::cout << lineZ << std::endl;
 
