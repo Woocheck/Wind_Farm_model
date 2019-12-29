@@ -13,7 +13,7 @@
         int _endNode {0};
     public:
         Graph(){};
-        std::complex<float> getCurrent(); 
+        std::complex<double> getCurrent(); 
 
  };
 
@@ -22,28 +22,28 @@
      private:
         int _elementNumber { 0 };
         std::string _name {};
-        float _nominalVoltage { 0 };
-        float _crossection { 0 };
-        float _resistance { 0 };
-        float _reactance { 0 };
-        float _conductance { 0 };
-        float _susceptance { 0 };
-        float _lenght { 0 };
-        float _nominalId { 0 };
-        float _shortcutCurrent1s { 0 };
+        double _nominalVoltage { 0 };
+        double _crossection { 0 };
+        double _resistance { 0 };
+        double _reactance { 0 };
+        double _conductance { 0 };
+        double _susceptance { 0 };
+        double _lenght { 0 };
+        double _nominalId { 0 };
+        double _shortcutCurrent1s { 0 };
     
     public:
         CableLine(){};
         CableLine( int num,
                    std::string name,
-                   float vol,
-                   float cross,
-                   float res,
-                   float react,
-                   float capacity,
-                   float lenght,
-                   float id,
-                   float cur1s ):
+                   double vol,
+                   double cross,
+                   double res,
+                   double react,
+                   double capacity,
+                   double lenght,
+                   double id,
+                   double cur1s ):
                    _elementNumber( num ),
                    _name( name ),
                    _nominalVoltage( vol ),
@@ -55,12 +55,15 @@
                    _nominalId( id ),
                    _shortcutCurrent1s( cur1s ) {};
 
-        std::complex<float> getCurrent();
-    // private:
-        std::complex<float> getZ();
-        std::complex<float> getY();
+        std::complex<double> getI1( std::complex<double> I2, std::complex<double> U2 );
+        std::complex<double> getU1( std::complex<double> I2, std::complex<double> U2 );
+
+    private:
+        std::complex<double> getZ();
+        std::complex<double> getY();
 
                    
  };
+
 
 #endif

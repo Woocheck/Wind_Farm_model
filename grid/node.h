@@ -11,19 +11,19 @@ class Node
     private:
         int _nodeNumber;
         std::string _nodeName;
-        float _nodeP;
-        float _nodeQ;
+        double _nodeP;
+        double _nodeQ;
         int _category;
-        std::complex<float> _nodeVoltage;
+        std::complex<double> _nodeVoltage;
         std::vector<Node> _childrens;
     
     public:
         Node( int number,
               std::string name,
-              float p,
-              float q,
+              double p,
+              double q,
               int cat,
-              std::complex<float> vol):
+              std::complex<double> vol):
               _nodeNumber ( number ),
               _nodeName ( name ),
               _nodeP ( p ),
@@ -33,18 +33,18 @@ class Node
         
         void setNumber(int name );
         void setName( std::string name );
-        void setP( float p );
-        void setQ( float q );
+        void setP( double p );
+        void setQ( double q );
         void setCategory( int cat );
-        void setVoltage( std::complex<float> vol );
-        void setVoltage( float re, float im );
+        void setVoltage( std::complex<double> vol );
+        void setVoltage( double re, double im );
 
         int getNumber();
         std::string getName();
-        float getP();
-        float getQ();
+        double getP();
+        double getQ();
         int getCategory();
-        std::complex<float>  getVoltage();
+        std::complex<double>  getVoltage();
 
 };
 
