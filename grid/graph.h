@@ -40,8 +40,7 @@
                    float cross,
                    float res,
                    float react,
-                   float conduct,
-                   float suscept,
+                   float capacity,
                    float lenght,
                    float id,
                    float cur1s ):
@@ -51,7 +50,7 @@
                    _crossection( cross ),
                    _resistance( res ),
                    _reactance( react ),
-                   _susceptance( suscept ),
+                   _susceptance( 2*M_1_PI*50*capacity ),
                    _lenght( lenght ),
                    _nominalId( id ),
                    _shortcutCurrent1s( cur1s ) {};
