@@ -37,3 +37,33 @@ std::complex<double> CableLine::getI1( std::complex<double> I2, std::complex<dou
 
     return c * U2 + d * I2; 
 }
+
+std::complex<double> CableLine::getI2( std::complex<double> I1, std::complex<double> U1 )
+{
+    std::complex<double> Z = getZ();
+    std::complex<double> Y = getY();
+
+    std::complex<double> a = std::real( 1 ) + Z * Y;
+    std::complex<double> b = Z;
+    std::complex<double> c = std::real( 2 ) * Y + Z * Y * Y;
+    std::complex<double> d = std::real( 1 ) + Z * Y;
+
+    std::complex<double> det_A = std::real( 1 ) / ( (a*d) - (c*d) );
+
+    return det_A * std::real( -1 ) * c * U1 + det_A * a * I1; 
+}
+
+std::complex<double> CableLine::getU2( std::complex<double> I1, std::complex<double> U1 )
+{
+    std::complex<double> Z = getZ();
+    std::complex<double> Y = getY();
+
+    std::complex<double> a = std::real( 1 ) + Z * Y;
+    std::complex<double> b = Z;
+    std::complex<double> c = std::real( 2 ) * Y + Z * Y * Y;
+    std::complex<double> d = std::real( 1 ) + Z * Y;
+
+    std::complex<double> det_A = std::real( 1 ) / ( (a*d) - (c*d) );
+
+    return det_A * d * U1 + det_A * std::real( -1 ) * b * I1; 
+}
