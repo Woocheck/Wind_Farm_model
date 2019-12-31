@@ -11,6 +11,7 @@ class Node
     private:
         int _nodeNumber;
         std::string _nodeName;
+        int _parentNumber;
         double _nodeP;
         double _nodeQ;
         int _category;
@@ -19,19 +20,22 @@ class Node
     
     public:
         Node( int number,
+              int parent,
               std::string name,
               double p,
               double q,
               int cat,
               std::complex<double> vol):
-              _nodeNumber ( number ),
-              _nodeName ( name ),
-              _nodeP ( p ),
-              _nodeQ ( q ),
-              _category ( cat ),
-              _nodeVoltage ( vol ) {};
+              _nodeNumber( number ),
+              _parentNumber( parent ),
+              _nodeName( name ),
+              _nodeP( p ),
+              _nodeQ( q ),
+              _category( cat ),
+              _nodeVoltage( vol ) {};
         
-        void setNumber(int name );
+        void setNumber(int number );
+        void setParent( int parentNumber );
         void setName( std::string name );
         void setP( double p );
         void setQ( double q );
@@ -40,12 +44,17 @@ class Node
         void setVoltage( double re, double im );
 
         int getNumber();
+        int getParentNumber();
         std::string getName();
         double getP();
         double getQ();
         int getCategory();
         std::complex<double>  getVoltage();
+        std::complex<double>  getNodePower();
 
+        int addChildren( Node children );
+        std::complex<double> getCurrentFromChildren();
+        std::complex<double> getPowerFromChildren();
 };
 
 
