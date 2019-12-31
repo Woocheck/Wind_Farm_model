@@ -59,7 +59,9 @@
         std::complex<double> getU1( std::complex<double> I2, std::complex<double> U2 );
         std::complex<double> getI2( std::complex<double> I1, std::complex<double> U1 );
         std::complex<double> getU2( std::complex<double> I1, std::complex<double> U1 );
+    
     private:
+    
         std::complex<double> getZ();
         std::complex<double> getY();
 

@@ -3,12 +3,22 @@
 
 #include "./node.h"
 
-class Tree
+class Model
 {
     private:
         Node _root;
     public:
-        Tree();
+        Model();
+
+        void reloadModel();
+        int  calculateCurrentFlow();
+        int  calculatePowerFlow();
+        int  calculateCurrentPowerFlow();
+        int  calculateVoltageLevels();
+
+    private:
+        
+        
     
 };
 
