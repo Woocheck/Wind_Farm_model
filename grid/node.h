@@ -56,6 +56,4 @@ class Node
         std::complex<double> getCurrentFromChildren();
         std::complex<double> getPowerFromChildren();
 };
-
-
 #endif 
