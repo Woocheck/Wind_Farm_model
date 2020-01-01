@@ -14,12 +14,34 @@ int Node::addChildren( Node children )
     return 1;    
 }
 
-std::complex<double> Node::getCurrentFromChildren()
+std::complex<double> Node::getCurrentFromChildrens()
 {
+    std::complex<double> current {};
+    for( auto element : _childrens )
+    {
+        current += element.getNodePower();
+    }
 
+    return current;
 }
 
-std::complex<double> Node::getPowerFromChildren()
+std::complex<double> Node::getCurrent()
+{
+    std::complex<double> current {};
+
+    if( sizeof( _childrens ) )
+    {
+        current += getCurrentFromChildrens();
+        current += ( std::real( _nodeP) + std::imag( _nodeQ ) ) / _nodeVoltage;
+        return current;
+    }
+    else
+    {
+        return ( std::real( _nodeP) + std::imag( _nodeQ ) ) / _nodeVoltage;
+    }
+    
+}
+std::complex<double> Node::getPowerFromChildrens()
 {
     std::complex<double> power {};
     for( auto element : _childrens )
@@ -32,7 +54,18 @@ std::complex<double> Node::getPowerFromChildren()
 
 std::complex<double>  Node::getNodePower()
 {
-    
+    std::complex<double> power {};
+
+    if( sizeof( _childrens ) )
+    {
+        power += getCurrentFromChildrens();
+        power += ( std::real( _nodeP) + std::imag( _nodeQ ) ) / _nodeVoltage;
+        return power;
+    }
+    else
+    {
+        return ( std::real( _nodeP) + std::imag( _nodeQ ) ) / _nodeVoltage;
+    }
 }
 
 void Node::setNumber( int name )

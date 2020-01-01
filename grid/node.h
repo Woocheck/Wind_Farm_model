@@ -53,7 +53,8 @@ class Node
         std::complex<double>  getNodePower();
 
         int addChildren( Node children );
-        std::complex<double> getCurrentFromChildren();
-        std::complex<double> getPowerFromChildren();
+        std::complex<double> getCurrentFromChildrens();
+        std::complex<double> getCurrent();
+        std::complex<double> getPowerFromChildrens();
 };
 #endif 
