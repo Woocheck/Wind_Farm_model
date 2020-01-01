@@ -4,7 +4,7 @@ std::complex<double>  Node::getNodePower()
 {
     return std::real( _nodeP ) + std::imag( _nodeQ );
 }
-
+ 
 int Node::addChildren( Node children )
 {
     if( children.getParentNumber() != _nodeNumber )
