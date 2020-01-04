@@ -16,7 +16,7 @@ class Node
         double _nodeQ;
         int _category;
         std::complex<double> _nodeVoltage;
-        std::vector<Node> _childrens;
+        std::vector<int> _childrens;
     
     public:
         Node( int number,
@@ -52,8 +52,9 @@ class Node
         std::complex<double>  getVoltage();
         std::complex<double>  getNodePower();
 
-        int addChildren( Node children );
-        std::complex<double> getCurrentFromChildrens();
+        void printChildrens();
+        int addChildren( int child );
+        std::vector<int> getChildrensList();
         std::complex<double> getCurrent();
         std::complex<double> getPowerFromChildrens();
 };
