@@ -9,10 +9,10 @@
 class Model
 {
     private:
-        CableLine _elements;
-        Node _root;
+        std::map<int, CableLine> _elements;
+        std::map<int, Node> _nodes;
+
     public:
-        Model();
 
         void reloadModel();
         int  calculateCurrentFlow();
