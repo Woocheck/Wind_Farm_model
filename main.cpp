@@ -2,7 +2,8 @@
 #include <math.h>
 #include <complex>
 
-#include "./grid/graph.h"
+#include "./grid/grid.h"
+
 
 int main(int argc, char const *argv[])
 {
@@ -20,5 +21,8 @@ int main(int argc, char const *argv[])
     std::cout << "I 2: " << line.getI2( line.getI1( I2, U2 ), line.getU1( I2, U2 ) ) << "\n";
     std::cout << "U 2: " << line.getU2( line.getI1( I2, U2 ), line.getU1( I2, U2 ) ) << "\n";
 
+    Model model;
+
+    model.reloadModel();
     return 0;
 }
