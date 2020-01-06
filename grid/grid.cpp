@@ -11,26 +11,26 @@ void Model::reloadModel()
     Node element3( 3, 1, "3", 3400000, 0, 1, 330000 );
     _nodes.insert({3,element3});
 
-    for(auto node : _nodes )
+    for(int i = 0; i<4; i++)
     {
-        node.second.printChildrens();
+        _nodes[i].printChildrens();
     }
-    for(auto node : _nodes )
+    for(int i = 0; i<4; i++ )
     {
-        std::cout << "node: " << node.first << "\n";
-        for( auto x : _nodes)
+        std::cout << "node: " << i << "\n";
+        for( int y = 0; y<4; y++)
         {
-            if( x.second.getNumber() != node.second.getNumber()
-                && node.second.getNumber() == x.second.getParentNumber() )
+            if( _nodes[y].getNumber() != _nodes[i].getNumber()
+                && _nodes[i].getNumber() == _nodes[y].getParentNumber() )
             {
-                std::cout << "children: " << node.first << "\n";
-                node.second.addChildren( x.first );
+                std::cout << "children: " << y << "\n";
+                _nodes[i].addChildren( y );
             }
         }
     }
-    for(auto node : _nodes )
+    for(int i = 0; i<4; i++)
     {
-        node.second.printChildrens();
+        _nodes[i].printChildrens();
     }
 }
 int Model::calculateCurrentFlow()

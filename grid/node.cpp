@@ -1,63 +1,6 @@
 #include "./node.h"
 
 
-void Node::printChildrens()
-{
-    for(auto x : _childrens)
-    {
-        std::cout << x;
-    }
-    std::cout << "\n";
-}
-int Node::addChildren( int child )
-{
-    _childrens.push_back( child );
-}
-std::vector<int> Node::getChildrensList()
-{
-    return _childrens;
-}
-
-std::complex<double> Node::getCurrent()
-{
-    std::complex<double> current {};
-
-    if( sizeof( _childrens ) )
-    {
-        return current;
-    }
-    else
-    {
-        return ( std::real( _nodeP) + std::imag( _nodeQ ) ) / _nodeVoltage;
-    }
-    
-}
-std::complex<double> Node::getPowerFromChildrens()
-{
-    std::complex<double> power {};
-    for( auto element : _childrens )
-    {
-        ;
-    }
-
-    return power;
-}
-
-std::complex<double>  Node::getNodePower()
-{
-    std::complex<double> power {};
-
-    if( sizeof( _childrens ) )
-    {
-        // power += getCurrentFromChildrens();
-        power += ( std::real( _nodeP) + std::imag( _nodeQ ) ) / _nodeVoltage;
-        return power;
-    }
-    else
-    {
-        return ( std::real( _nodeP) + std::imag( _nodeQ ) ) / _nodeVoltage;
-    }
-}
 
 void Node::setNumber( int name )
 {

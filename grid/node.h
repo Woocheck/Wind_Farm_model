@@ -5,6 +5,7 @@
 #include <string>
 #include <complex>
 #include <vector>
+#include <boost/graph/
  
 class Node
 {
@@ -52,10 +53,6 @@ class Node
         std::complex<double>  getVoltage();
         std::complex<double>  getNodePower();
 
-        void printChildrens();
-        int addChildren( int child );
-        std::vector<int> getChildrensList();
-        std::complex<double> getCurrent();
-        std::complex<double> getPowerFromChildrens();
+        
 };
 #endif 
