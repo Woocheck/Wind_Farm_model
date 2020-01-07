@@ -11,6 +11,7 @@ class Model
     private:
         std::map<int, CableLine> _elements;
         std::map<int, Node> _nodes;
+        Node _root;
 
     public:
 

@@ -5,8 +5,7 @@
 #include <string>
 #include <complex>
 #include <vector>
-#include <boost/graph/
- 
+#include <memory>
 class Node
 {
     private:
@@ -17,7 +16,7 @@ class Node
         double _nodeQ;
         int _category;
         std::complex<double> _nodeVoltage;
-        std::vector<int> _childrens;
+        std::vector<Node> _childrens;
     
     public:
         Node( int number,
