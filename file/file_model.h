@@ -9,21 +9,12 @@ class InputData
 private:
     int _headerLinesNumber;
     std::vector<std::string> _headerLines;
-    std::vector<std::vector<std::string>>  _tokensRows;  
+    std::vector<std::vector<std::string> >  _tokensRows;
+    bool readFile(std::string filePath, std::vector<std::string>&, std::vector< std::vector <std::string> >&);
 public:
-    InputData();
-    ~InputData();
+    InputData(std::string filePath);
     std::vector<std::string> getHeader();
     std::vector<std::vector<std::string>> getData();
 };
-
-InputData::InputData()
-{
-}
-
-InputData::~InputData()
-{
-}
-
 
 #endif 
