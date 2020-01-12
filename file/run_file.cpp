@@ -6,14 +6,13 @@
 #include "file_model.h"
 
 int main(int argc, char**argv) {
-    InputData *d = new InputData("test_data");
-    for (auto x : d->getHeader()){
+    InputData data("test_data");
+    for (auto x : data.getHeader()){
         std::cout << x << ' ' << std::endl;
     }
-    for (auto x : d->getData()) {
+    for (auto x : data.getHeader()) {
         for (auto y : x) {
             std::cout << y << ' ';
-
         }
         std::cout << std::endl;
     }
