@@ -15,5 +15,6 @@ int main(int argc, char**argv) {
             std::cout << y << ' ';
 
         }
+        std::cout << std::endl;
     }
 }

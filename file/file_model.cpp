@@ -6,7 +6,7 @@
 
 InputData::InputData(std::string filePath)
 {
-    _headerLinesNumber = 0;
+    _headerLinesNumber = 2;
     readFile(filePath, _headerLines, _tokensRows);
 }
 
@@ -26,7 +26,7 @@ bool InputData::readFile(std::string filePath, std::vector <std::string> &header
 
     while(std::getline(in, temp)){
         if(temp.size() > 0) {
-            if(_headerLinesNumber < 2) {
+            if(_headerLinesNumber < _headerLinesNumber) {
                 header.push_back(temp);
                 _headerLinesNumber++;
             } else {
@@ -38,6 +38,7 @@ bool InputData::readFile(std::string filePath, std::vector <std::string> &header
                 } while(ss);
                 data.push_back(svec);
             }
+            svec.clear();
         }
     }
     in.close();
