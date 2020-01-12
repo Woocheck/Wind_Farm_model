@@ -7,10 +7,12 @@
 
 int main(int argc, char**argv) {
     InputData data("test_data");
-    for (auto x : data.getHeader()){
+    auto header = data.getHeader();
+    for (auto x : header ){
         std::cout << x << ' ' << std::endl;
     }
-    for (auto x : data.getHeader()) {
+    auto dataRows = data.getData();
+    for (auto x : dataRows) {
         for (auto y : x) {
             std::cout << y << ' ';
         }
