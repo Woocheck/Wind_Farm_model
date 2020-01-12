@@ -11,9 +11,9 @@ std::complex<double> Model::strToComplex( std::string value )
 
 void Model::reloadModel()
 {
-    InputData nodesfile("./nodes.txt");
-
-    auto nodesString { std::make_shared<InputData>( nodesfile )};
+    {
+    InputData nodesFile("./nodes.txt");
+    auto nodesString { std::make_shared<InputData>( nodesFile )};
 
     for( auto rawNode : nodesString->getData() )
     {
@@ -25,6 +25,17 @@ void Model::reloadModel()
         _nodes[ std::stoi( rawNode.at( 0 ) )].setVoltage( 
                                                 strToComplex( rawNode.at( 5 ).c_str() ));
     }
+    }
+    {
+    InputData graphFile( "./graphs.txt");
+    auto graphString { std::make_shared<InputData>( graphFile ) };
+
+    for( auto rawGraph : graphString->getData() )
+    {
+        _elements[ std::stoi( rawGraph.at( 0 ) )];
+    }
+    }
+    
    
 }
 int Model::calculateCurrentFlow()
