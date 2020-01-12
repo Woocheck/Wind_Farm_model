@@ -2,9 +2,13 @@
 #define _GRID_H_
 
 #include <map>
+#include <string>
+#include <complex>
+#include <sstream>
 
 #include "./node.h"
 #include "./graph.h"
+#include "../file/file_model.h"
 
 class Model
 {
@@ -22,7 +26,7 @@ class Model
         int  calculateVoltageLevels();
 
     private:
-        
+        std::complex<double> strToComplex( std::string value );    
         
     
 };

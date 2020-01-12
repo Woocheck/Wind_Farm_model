@@ -1,28 +1,29 @@
 #include "./grid.h"
 
+std::complex<double> Model::strToComplex( std::string value )
+{
+    std::istringstream is('(' + value + ')');
+    std::complex<double> conwertedValue;
+    is >> conwertedValue;
+
+    return conwertedValue;
+}
+
 void Model::reloadModel()
 {
-    Node element1( 1, 0, "1", 3400000, 0, 1, 330000 );
-    _nodes.insert({1,element1});
-    Node element2( 2, 1, "2", 3400000, 0, 1, 330000 );
-    _nodes.insert({2,element2});
-    Node element3( 3, 1, "3", 3400000, 0, 1, 330000 );
-    _nodes.insert({3,element3});
+    InputData nodesfile("./nodes.txt");
 
-    _root.setNumber( 0 );
-    _root.setParent( 0 );
-    _root.setName( "0");
-    _root.setP( 0 );
-    _root.setQ( 0 );
-    _root.setVoltage( 33000 );
-    _root.setCategory( 0 );
-    auto parent = _root;
-    while( _nodes.size() )
+    auto nodesString { std::make_shared<InputData>( nodesfile )};
+
+    for( auto rawNode : nodesString->getData() )
     {
-        for(auto node : _nodes )
-        {
-            if()
-        }
+        _nodes[ std::stoi( rawNode.at( 0 ) )].setNumber( std::stoi( rawNode.at( 0 ) ) );
+        _nodes[ std::stoi( rawNode.at( 0 ) )].setName(rawNode.at( 1 ));
+        _nodes[ std::stoi( rawNode.at( 0 ) )].setParent( std::stoi( rawNode.at( 2 ) ) );
+        _nodes[ std::stoi( rawNode.at( 0 ) )].setP( std::atof( rawNode.at( 3 ).c_str() ) );
+        _nodes[ std::stoi( rawNode.at( 0 ) )].setQ( std::atof( rawNode.at( 4 ).c_str() ) );
+        _nodes[ std::stoi( rawNode.at( 0 ) )].setVoltage( 
+                                                strToComplex( rawNode.at( 5 ).c_str() ));
     }
    
 }
