@@ -3,16 +3,19 @@
 //
 
 #include <iostream>
+#include <memory>
 #include "file_model.h"
 
 int main(int argc, char**argv) {
     InputData data("test_data");
-    auto header = data.getHeader();
-    for (auto x : header ){
+    
+    auto dataPointer { std::make_shared<InputData>( data )};
+    
+    for (auto x : dataPointer->getHeader() ){
         std::cout << x << ' ' << std::endl;
     }
-    auto dataRows = data.getData();
-    for (auto x : dataRows) {
+    
+    for (auto x : dataPointer->getData()) {
         for (auto y : x) {
             std::cout << y << ' ';
         }
