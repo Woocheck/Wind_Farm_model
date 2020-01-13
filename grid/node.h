@@ -19,6 +19,7 @@ class Node
         std::vector<Node> _childrens;
     
     public:
+        Node(){};
         Node( int number,
               int parent,
               std::string name,
@@ -35,7 +36,7 @@ class Node
               _nodeVoltage( vol ) {};
         
         void setNumber(int number );
-        void setParent( int parentNumber );
+        void setParentNumber( int parentNumber );
         void setName( std::string name );
         void setP( double p );
         void setQ( double q );

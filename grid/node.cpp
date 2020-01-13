@@ -7,6 +7,11 @@ void Node::setNumber( int name )
     _nodeNumber = name;
 }
 
+void Node::setParentNumber( int number )
+{
+    _parentNumber = number;
+}
+
 void Node::setName( std::string name )
 {
     _nodeName = name;
