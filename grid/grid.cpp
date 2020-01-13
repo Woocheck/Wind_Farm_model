@@ -32,7 +32,15 @@ void Model::reloadModel()
 
     for( auto rawGraph : graphString->getData() )
     {
-        _elements[ std::stoi( rawGraph.at( 0 ) )];
+        _elements[ std::stoi( rawGraph.at( 0 ) )].setElementNumber( std::stoi( rawGraph.at( 0 ) ) );
+        _elements[ std::stoi( rawGraph.at( 0 ) )].setName( rawGraph.at( 1 ) );
+        _elements[ std::stoi( rawGraph.at( 0 ) )].setVoltage( std::atof( rawGraph.at( 2 ).c_str() ) );
+        _elements[ std::stoi( rawGraph.at( 0 ) )].setCrossection( std::atof( rawGraph.at( 3 ).c_str() ) );
+        _elements[ std::stoi( rawGraph.at( 0 ) )].setResistance( std::atof( rawGraph.at( 4 ).c_str() ) );
+        _elements[ std::stoi( rawGraph.at( 0 ) )].setReactance( std::atof( rawGraph.at( 5 ).c_str() ) );
+        _elements[ std::stoi( rawGraph.at( 0 ) )].setSusceptance( std::atof( rawGraph.at( 6 ).c_str() ) );
+        _elements[ std::stoi( rawGraph.at( 0 ) )].setLenght( std::atof( rawGraph.at( 7 ).c_str() ) );
+        _elements[ std::stoi( rawGraph.at( 0 ) )].setNominalId( std::atof( rawGraph.at( 8 ).c_str() ) );   
     }
     }
     
