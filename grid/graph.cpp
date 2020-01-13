@@ -67,3 +67,77 @@ std::complex<double> CableLine::getU2( std::complex<double> I1, std::complex<dou
 
     return det_A * d * U1 + det_A * std::real( -1 ) * b * I1; 
 }
+
+void CableLine::setElementNumber( int number )
+{
+    _elementNumber = number;
+}
+void CableLine::setName( std::string name )
+{
+    _name = name;
+}
+void CableLine::setVoltage( double voltage )
+{
+    _nominalVoltage = voltage;
+}
+void CableLine::setCrossection( double crossection )
+{
+    _crossection = crossection;
+}
+void CableLine::setResistance( double resistance )
+{
+    _resistance = resistance;
+}
+void CableLine::setReactance( double reactance )
+{
+    _reactance = reactance;
+}
+void CableLine::setSusceptance( double susceptance )
+{
+    _susceptance = susceptance; 
+}
+void CableLine::setLenght( double lenght )
+{
+    _lenght = lenght;
+}
+void CableLine::setNominalId( double id )
+{
+    _nominalId = id;
+}
+
+int CableLine::getNumber()
+{
+    return _elementNumber;
+}
+std::string CableLine::getName()
+{
+    return _name;
+}
+double CableLine::getVoltage()
+{
+    return _nominalVoltage;
+}
+double CableLine::getCrossection( double crossection )
+{
+    return _crossection;
+}
+double CableLine::getResistance()
+{
+    return _resistance;
+}
+double CableLine::getReactance()
+{
+    return _reactance;
+}
+double CableLine::getSusceptance()
+{
+    return _susceptance;
+}
+double CableLine::getLenght()
+{
+    return _lenght;
+}
+double CableLine::getNominalId()
+{
+    return _nominalId;
+}

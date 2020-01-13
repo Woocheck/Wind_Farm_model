@@ -59,6 +59,27 @@
         std::complex<double> getU1( std::complex<double> I2, std::complex<double> U2 );
         std::complex<double> getI2( std::complex<double> I1, std::complex<double> U1 );
         std::complex<double> getU2( std::complex<double> I1, std::complex<double> U1 );
+
+        void setElementNumber( int number );
+        void setName( std::string name );
+        void setVoltage( double voltage );
+        void setCrossection( double crossection );
+        void setResistance( double resistance );
+        void setReactance( double reactance );
+        void setSusceptance( double susceptance );
+        void setLenght( double lenght );
+        void setNominalId( double id );
+
+        int getNumber();
+        std::string getName();
+        double getVoltage();
+        double getCrossection( double crossection );
+        double getResistance();
+        double getReactance();
+        double getSusceptance();
+        double getLenght();
+        double getNominalId();
+
     
     private:
     
