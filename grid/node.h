@@ -10,8 +10,8 @@ class Node
 {
     private:
         int _nodeNumber;
-        std::string _nodeName;
         int _parentNumber;
+        std::string _nodeName;
         double _nodeP;
         double _nodeQ;
         int _category;

@@ -23,12 +23,13 @@ bool InputData::readFile(std::string filePath, std::vector <std::string> &header
     // separate words.
     std::string temp;
     std::vector<std::string> svec;
-
+    int linesNumber { 0 };
+    
     while(std::getline(in, temp)){
         if(temp.size() > 0) {
-            if(_headerLinesNumber < _headerLinesNumber) {
+            if(linesNumber < _headerLinesNumber) {
                 header.push_back(temp);
-                _headerLinesNumber++;
+                linesNumber++;
             } else {
                 std::istringstream ss(temp);
                 do {

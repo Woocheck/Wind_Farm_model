@@ -23,6 +23,6 @@ int main(int argc, char const *argv[])
 
     Model model;
 
-    // model.reloadModel();
+    model.reloadModel();
     return 0;
 }
