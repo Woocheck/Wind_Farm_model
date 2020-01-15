@@ -2,6 +2,8 @@
 #include <fstream>
 #include <vector>
 #include <sstream>
+#include <algorithm>
+#include <locale>
 #include "file_model.h"
 
 InputData::InputData(std::string filePath)
@@ -34,6 +36,11 @@ bool InputData::readFile(std::string filePath, std::vector <std::string> &header
                 do {
                     std::string word;
                     ss >> word;
+                    word.erase(std::remove_if(word.begin(), word.end(),
+                                              [](char &c) {
+                                                  return std::isspace<char>(c, std::locale::classic());
+                                              }),
+                                                      word.end());
                     svec.push_back(word);
                 } while(ss);
                 data.push_back(svec);
