@@ -7,7 +7,7 @@
 class InputData
 {
 private:
-    int _headerLinesNumber;
+    const int _headerLinesNumber = 2; // Assume header takes two lines
     std::vector<std::string> _headerLines;
     std::vector<std::vector<std::string> >  _tokensRows;
     bool readFile(std::string filePath, std::vector<std::string>&, std::vector< std::vector <std::string> >&);

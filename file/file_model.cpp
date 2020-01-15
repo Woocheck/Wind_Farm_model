@@ -6,7 +6,6 @@
 
 InputData::InputData(std::string filePath)
 {
-    _headerLinesNumber = 2;
     readFile(filePath, _headerLines, _tokensRows);
 }
 
