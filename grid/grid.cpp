@@ -1,4 +1,5 @@
 #include "./grid.h"
+#include <armadillo>
 
 std::complex<double> Model::strToComplex( std::string value )
 {

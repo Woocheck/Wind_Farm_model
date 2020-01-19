@@ -18,7 +18,8 @@ std::complex<double> CableLine::getY()
     return y; 
 }
 
-std::complex<double> CableLine::getU1( std::complex<double> I2, std::complex<double> U2 )
+std::complex<double> CableLine::getU1( std::complex<double> I2, 
+                                       std::complex<double> U2 )
 {
     std::complex<double> Z = getZ();
     std::complex<double> Y = getY();
@@ -28,7 +29,8 @@ std::complex<double> CableLine::getU1( std::complex<double> I2, std::complex<dou
     return a * U2 + b * I2;   
 }
 
-std::complex<double> CableLine::getI1( std::complex<double> I2, std::complex<double> U2 )
+std::complex<double> CableLine::getI1( std::complex<double> I2, 
+                                       std::complex<double> U2 )
 {
     std::complex<double> Z = getZ();
     std::complex<double> Y = getY();
@@ -38,7 +40,8 @@ std::complex<double> CableLine::getI1( std::complex<double> I2, std::complex<dou
     return c * U2 + d * I2; 
 }
 
-std::complex<double> CableLine::getI2( std::complex<double> I1, std::complex<double> U1 )
+std::complex<double> CableLine::getI2( std::complex<double> I1, 
+                                       std::complex<double> U1 )
 {
     std::complex<double> Z = getZ();
     std::complex<double> Y = getY();
@@ -53,7 +56,8 @@ std::complex<double> CableLine::getI2( std::complex<double> I1, std::complex<dou
     return det_A * std::real( -1 ) * c * U1 + det_A * a * I1; 
 }
 
-std::complex<double> CableLine::getU2( std::complex<double> I1, std::complex<double> U1 )
+std::complex<double> CableLine::getU2( std::complex<double> I1, 
+                                       std::complex<double> U1 )
 {
     std::complex<double> Z = getZ();
     std::complex<double> Y = getY();
