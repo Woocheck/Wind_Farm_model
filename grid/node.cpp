@@ -37,7 +37,13 @@ void Node::setVoltage( std::complex<double> vol )
 
 void Node::setVoltage( double re, double im )
 {
-    _nodeVoltage = std::real( re ) + std::imag( im );
+    _nodeVoltageModul = std::abs( ( re ) + std::imag( im ) );
+    _nodeVoltageAngle = std::arg( ( re ) + std::imag( im ) );
+}
+void Node::setVoltageTrigonometric( double mod, double arg )
+{
+    _nodeVoltageModul = mod;
+    _nodeVoltageModul = arg;
 }
 
 int Node::getNumber()
@@ -56,6 +62,14 @@ double Node::getQ()
 {
     return _nodeQ;
 }
+double Node::getVoltageModule()
+{
+    return _nodeVoltageModul;
+}
+double Node::getVoltageArgument()
+{
+    return _nodeVoltageAngle;
+}
 int Node::getCategory()
 {
     return _category;
@@ -63,7 +77,7 @@ int Node::getCategory()
 
 std::complex<double>  Node::getVoltage()
 {
-    return _nodeVoltage;
+    return std::polar( _nodeVoltageModul, _nodeVoltageAngle);
 }
 
 int Node::getParentNumber()

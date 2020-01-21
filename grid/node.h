@@ -14,8 +14,10 @@ class Node
         std::string _nodeName;
         double _nodeP;
         double _nodeQ;
+        double _nodeVoltageModul;
+        double _nodeVoltageAngle;
         int _category;
-        std::complex<double> _nodeVoltage;
+        
         std::vector<Node> _childrens;
     
     public:
@@ -25,6 +27,8 @@ class Node
               std::string name,
               double p,
               double q,
+              double u,
+              double arg,              
               int cat,
               std::complex<double> vol):
               _nodeNumber( number ),
@@ -32,8 +36,9 @@ class Node
               _nodeName( name ),
               _nodeP( p ),
               _nodeQ( q ),
-              _category( cat ),
-              _nodeVoltage( vol ) {};
+              _nodeVoltageModul( u ),
+              _nodeVoltageAngle( arg ),
+              _category( cat ) {};
         
         void setNumber(int number );
         void setParentNumber( int parentNumber );
@@ -43,12 +48,15 @@ class Node
         void setCategory( int cat );
         void setVoltage( std::complex<double> vol );
         void setVoltage( double re, double im );
+        void setVoltageTrigonometric( double mod, double arg );
 
         int getNumber();
         int getParentNumber();
         std::string getName();
         double getP();
         double getQ();
+        double getVoltageModule();
+        double getVoltageArgument();
         int getCategory();
         std::complex<double>  getVoltage();
         std::complex<double>  getNodePower();
