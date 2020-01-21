@@ -5,17 +5,19 @@
 #include <string>
 #include <complex>
 #include <sstream>
+#include <armadillo>
 
 #include "./node.h"
 #include "./graph.h"
 #include "../file/file_model.h"
+
 
 class Model
 {
     private:
         std::map<int, CableLine> _elements;
         std::map<int, Node> _nodes;
-        // Node _root;
+        arma::Mat<std::complex<double>> _admitanceMatrix;
 
     public:
         Model()
@@ -23,13 +25,10 @@ class Model
 
         };
         void reloadModel();
-        int  calculateCurrentFlow();
-        int  calculatePowerFlow();
-        int  calculateCurrentPowerFlow();
-        int  calculateVoltageLevels();
 
     private:
-        std::complex<double> strToComplex( std::string value );    
+        std::complex<double> strToComplex( std::string value ); 
+        void calculateAdmitanceMatrix();   
         
     
 };

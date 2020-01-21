@@ -28,6 +28,7 @@ void Model::reloadModel()
         _nodes[ std::stoi( rawNode.at( 0 ) )].setCategory( std::stoi( rawNode.at( 7 ) ) );
     }
     }
+
     {
     InputData graphFile( "./graphs.txt");
     auto graphString { std::make_shared<InputData>( graphFile ) };
@@ -45,26 +46,15 @@ void Model::reloadModel()
         _elements[ std::stoi( rawGraph.at( 0 ) )].setNominalId( std::atof( rawGraph.at( 8 ).c_str() ) );   
     }
     }
+
+    calculateAdmitanceMatrix();
     
    
 }
-int Model::calculateCurrentFlow()
+
+void Model::calculateAdmitanceMatrix()
 {
 
 }
 
-int Model::calculatePowerFlow()
-{
-
-}
-
-int Model::calculateCurrentPowerFlow()
-{
-
-}
-
-int Model::calculateVoltageLevels()
-{
-
-}
 
