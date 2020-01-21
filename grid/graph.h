@@ -83,6 +83,7 @@
         double getSusceptance();
         double getLenght();
         double getNominalId();
+        std::complex<double> getConductance();
 
     
     private:

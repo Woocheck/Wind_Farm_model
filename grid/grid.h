@@ -20,15 +20,14 @@ class Model
         arma::Mat<std::complex<double>> _admitanceMatrix;
 
     public:
-        Model()
-        {
-
-        };
+        Model(){};
         void reloadModel();
 
     private:
         std::complex<double> strToComplex( std::string value ); 
         void calculateAdmitanceMatrix();   
+        void loadGraphs();
+        void loadNodes();
         
     
 };

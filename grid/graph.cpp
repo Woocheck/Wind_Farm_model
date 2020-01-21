@@ -145,3 +145,7 @@ double CableLine::getNominalId()
 {
     return _nominalId;
 }
+std::complex<double> CableLine::getConductance()
+{
+    return 1 / (std::real( _resistance ) + std::imag( _reactance ) );
+}
