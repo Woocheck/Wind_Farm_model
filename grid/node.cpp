@@ -25,6 +25,14 @@ void Node::setQ( double q )
 {
     _nodeQ = q;
 }
+void Node::setVoltageModule( double module )
+{
+    _nodeVoltageModul = module;
+}
+void Node::setVoltageArgument( double argument )
+{
+    _nodeVoltageAngle = argument;
+}
 void Node::setCategory( int cat )
 {
     _category = cat;
@@ -74,7 +82,6 @@ int Node::getCategory()
 {
     return _category;
 }
-
 std::complex<double>  Node::getVoltage()
 {
     return std::polar( _nodeVoltageModul, _nodeVoltageAngle);

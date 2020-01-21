@@ -46,6 +46,8 @@ class Node
         void setP( double p );
         void setQ( double q );
         void setCategory( int cat );
+        void setVoltageModule( double module );
+        void setVoltageArgument( double argument );
         void setVoltage( std::complex<double> vol );
         void setVoltage( double re, double im );
         void setVoltageTrigonometric( double mod, double arg );

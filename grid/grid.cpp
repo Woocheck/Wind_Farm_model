@@ -23,8 +23,9 @@ void Model::reloadModel()
         _nodes[ std::stoi( rawNode.at( 0 ) )].setParentNumber( std::stoi( rawNode.at( 2 ) ) );
         _nodes[ std::stoi( rawNode.at( 0 ) )].setP( std::atof( rawNode.at( 3 ).c_str() ) );
         _nodes[ std::stoi( rawNode.at( 0 ) )].setQ( std::atof( rawNode.at( 4 ).c_str() ) );
-        _nodes[ std::stoi( rawNode.at( 0 ) )].setVoltage( 
-                                                strToComplex( rawNode.at( 5 ).c_str() ));
+        _nodes[ std::stoi( rawNode.at( 0 ) )].setVoltageModule( std::atof( rawNode.at( 5 ).c_str() ) );
+        _nodes[ std::stoi( rawNode.at( 0 ) )].setVoltageArgument( std::atof( rawNode.at( 6 ).c_str() ) );
+        _nodes[ std::stoi( rawNode.at( 0 ) )].setCategory( std::stoi( rawNode.at( 7 ) ) );
     }
     }
     {
