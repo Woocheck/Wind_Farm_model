@@ -35,3 +35,13 @@ wind_farm_model.code-workspace
 .vscode/c_cpp_properties.json
 main
 .idea/
+CMakeLists.txt
+CMakeCache.txt
+CMakeFiles/3.14.5/CompilerIdCXX/CMakeCXXCompilerId.cpp
+CMakeFiles/3.14.5/CMakeSystem.cmake
+CMakeFiles/3.14.5/CMakeDetermineCompilerABI_CXX.bin
+CMakeFiles/3.14.5/CMakeCXXCompiler.cmake
+CMakeFiles/feature_tests.cxx
+CMakeFiles/feature_tests.bin
+CMakeFiles/cmake.check_cache
+CMakeFiles/CMakeOutput.log
