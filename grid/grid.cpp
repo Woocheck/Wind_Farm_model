@@ -25,14 +25,15 @@ void Model::loadGraphs()
     for( auto rawGraph : graphString->getData() )
     {
         _elements[ std::stoi( rawGraph.at( 0 ) )].setElementNumber( std::stoi( rawGraph.at( 0 ) ) );
-        _elements[ std::stoi( rawGraph.at( 0 ) )].setName( rawGraph.at( 1 ) );
-        _elements[ std::stoi( rawGraph.at( 0 ) )].setVoltage( std::atof( rawGraph.at( 2 ).c_str() ) );
-        _elements[ std::stoi( rawGraph.at( 0 ) )].setCrossection( std::atof( rawGraph.at( 3 ).c_str() ) );
-        _elements[ std::stoi( rawGraph.at( 0 ) )].setResistance( std::atof( rawGraph.at( 4 ).c_str() ) );
-        _elements[ std::stoi( rawGraph.at( 0 ) )].setReactance( std::atof( rawGraph.at( 5 ).c_str() ) );
-        _elements[ std::stoi( rawGraph.at( 0 ) )].setSusceptance( std::atof( rawGraph.at( 6 ).c_str() ) );
-        _elements[ std::stoi( rawGraph.at( 0 ) )].setLenght( std::atof( rawGraph.at( 7 ).c_str() ) );
-        _elements[ std::stoi( rawGraph.at( 0 ) )].setNominalId( std::atof( rawGraph.at( 8 ).c_str() ) );   
+        _elements[ std::stoi( rawGraph.at( 0 ) )].setNodesNumbers( std::stoi( rawGraph.at( 1 ) ),std::stoi( rawGraph.at( 2 ) ) );
+        _elements[ std::stoi( rawGraph.at( 0 ) )].setName( rawGraph.at( 3 ) );
+        _elements[ std::stoi( rawGraph.at( 0 ) )].setVoltage( std::atof( rawGraph.at( 3 ).c_str() ) );
+        _elements[ std::stoi( rawGraph.at( 0 ) )].setCrossection( std::atof( rawGraph.at( 4 ).c_str() ) );
+        _elements[ std::stoi( rawGraph.at( 0 ) )].setResistance( std::atof( rawGraph.at( 5 ).c_str() ) );
+        _elements[ std::stoi( rawGraph.at( 0 ) )].setReactance( std::atof( rawGraph.at( 6 ).c_str() ) );
+        _elements[ std::stoi( rawGraph.at( 0 ) )].setSusceptance( std::atof( rawGraph.at( 7 ).c_str() ) );
+        _elements[ std::stoi( rawGraph.at( 0 ) )].setLenght( std::atof( rawGraph.at( 8 ).c_str() ) );
+        _elements[ std::stoi( rawGraph.at( 0 ) )].setNominalId( std::atof( rawGraph.at( 9 ).c_str() ) );   
     }
 }
 void Model::loadNodes()
@@ -56,15 +57,25 @@ void Model::calculateAdmitanceMatrix()
 {
     auto matrixSize { _nodes.size() };
     _admitanceMatrix.resize( matrixSize, matrixSize );
-    for(auto graph : _elements )
+    for(auto element : _elements )
     {
-        _admitanceMatrix.at( graph.second.)
+        auto [i,j] = element.second.setNodesNumbers;
+        std::complex<double> Z = std::real( element.second.getResistance() ) + std::imag( element.second.getReactance() );
+        std::complex<double> Z0 = std::imag( element.second.getSusceptance()/2 );
+        
+        if( i!= j)
+        {
+            
+            _admitanceMatrix.at( i, j ) = std::real(1) / Z;
+        }
+        else 
+        {
+            _admitanceMatrix.at( i, i ) += ( std::real(1)/Z ) + ( std::imag(1)/Z0 );
+            _admitanceMatrix.at( j, j ) += ( std::real(1)/Z ) + ( std::imag(1)/Z0 );
+        }
+         
     }
     
-    for( int i{0}; i< matrixSize; i++)
-    {
-        
-    }
 }
 
 
