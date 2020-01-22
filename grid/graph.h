@@ -6,7 +6,7 @@
 
  class Graph
  {
-    private:
+    protected:
 
         int _graphNumber {0};
         int _beginningNode {0};
@@ -20,7 +20,6 @@
  class CableLine : public Graph
  {
      private:
-        int _elementNumber { 0 };
         std::string _name {};
         double _nominalVoltage { 0 };
         double _crossection { 0 };
@@ -35,6 +34,8 @@
     public:
         CableLine(){};
         CableLine( int num,
+                   int begNum,
+                   int endNum,
                    std::string name,
                    double vol,
                    double cross,
@@ -44,7 +45,6 @@
                    double lenght,
                    double id,
                    double cur1s ):
-                   _elementNumber( num ),
                    _name( name ),
                    _nominalVoltage( vol ),
                    _crossection( cross ),
@@ -53,7 +53,12 @@
                    _susceptance( 2*M_1_PI*50*capacity ),
                    _lenght( lenght ),
                    _nominalId( id ),
-                   _shortcutCurrent1s( cur1s ) {};
+                   _shortcutCurrent1s( cur1s ) 
+        {
+         Graph::_graphNumber = num;
+         Graph::_beginningNode = begNum;
+         Graph::_endNode = endNum;   
+        };
 
         std::complex<double> getI1( std::complex<double> I2, 
                                     std::complex<double> U2 );
@@ -65,6 +70,7 @@
                                     std::complex<double> U1 );
 
         void setElementNumber( int number );
+        void setNodesNumbers( int begin, int end );
         void setName( std::string name );
         void setVoltage( double voltage );
         void setCrossection( double crossection );
@@ -75,6 +81,7 @@
         void setNominalId( double id );
 
         int getNumber();
+        std::pair<int,int> getNodesNumbers();
         std::string getName();
         double getVoltage();
         double getCrossection( double crossection );

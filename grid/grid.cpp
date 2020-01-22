@@ -15,8 +15,6 @@ void Model::reloadModel()
     loadGraphs();
     loadNodes();
     calculateAdmitanceMatrix();
-    
-   
 }
 
 void Model::loadGraphs()

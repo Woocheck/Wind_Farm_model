@@ -74,7 +74,12 @@ std::complex<double> CableLine::getU2( std::complex<double> I1,
 
 void CableLine::setElementNumber( int number )
 {
-    _elementNumber = number;
+    Graph::_graphNumber = number;
+}
+void CableLine::setNodesNumbers( int begin, int end )
+{
+    Graph::_beginningNode = begin;
+    Graph::_endNode = end;
 }
 void CableLine::setName( std::string name )
 {
@@ -111,7 +116,11 @@ void CableLine::setNominalId( double id )
 
 int CableLine::getNumber()
 {
-    return _elementNumber;
+    return Graph::_graphNumber;
+}
+std::pair<int,int> CableLine::getNodesNumbers()
+{
+    return std::make_pair( Graph::_beginningNode, Graph::_endNode );
 }
 std::string CableLine::getName()
 {
