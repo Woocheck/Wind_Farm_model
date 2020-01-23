@@ -59,7 +59,7 @@ void Model::calculateAdmitanceMatrix()
     _admitanceMatrix.resize( matrixSize, matrixSize );
     for(auto element : _elements )
     {
-        auto [i,j] = element.second.setNodesNumbers;
+        auto [i,j] = element.second.getNodesNumbers();
         std::complex<double> Z = std::real( element.second.getResistance() ) + std::imag( element.second.getReactance() );
         std::complex<double> Z0 = std::imag( element.second.getSusceptance()/2 );
         

@@ -40,7 +40,8 @@ void Node::setCategory( int cat )
 
 void Node::setVoltage( std::complex<double> vol )
 {
-    _nodeVoltage = vol;
+    _nodeVoltageModul = vol.real();
+    _nodeVoltageAngle = vol.imag();
 }
 
 void Node::setVoltage( double re, double im )
