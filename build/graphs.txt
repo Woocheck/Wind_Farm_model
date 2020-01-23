@@ -1,0 +1,5 @@
+Element number | Begin number | End Number |   Name     | Voltage | Crossection | Resistance | Reactance | Susceptance | Lenght | Current |
+               |              |            |            |  Volts  |  mm2        |    ohm     |   ohm     |    ohm      |    m   |   A     |
+
+      0               0             1           0-1       33000        1000          1            1             1         1000      300
+      1               1             2           1-2       33000        1000          1            1             1         500       300
