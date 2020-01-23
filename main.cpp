@@ -20,7 +20,7 @@ int main(int argc, char const *argv[])
 
     std::cout << "I 2: " << line.getI2( line.getI1( I2, U2 ), line.getU1( I2, U2 ) ) << "\n";
     std::cout << "U 2: " << line.getU2( line.getI1( I2, U2 ), line.getU1( I2, U2 ) ) << "\n";
-
+{
     InputData data("graphs.txt");
     
     auto dataPointer { std::make_shared<InputData>( data )};
@@ -35,5 +35,26 @@ int main(int argc, char const *argv[])
         }
         std::cout << std::endl;
     };
+}
+{
+    InputData data("nodes.txt");
+    
+    auto dataPointer { std::make_shared<InputData>( data )};
+    
+    for (auto x : dataPointer->getHeader() ){
+        std::cout << x << ' ' << std::endl;
+    }
+    
+    for (auto x : dataPointer->getData()) {
+        for (auto y : x) {
+            std::cout << y << ' ';
+        }
+        std::cout << std::endl;
+    };
+}
+    Model grid;
+
+    grid.reloadModel();
+    
     return 0;
 }
