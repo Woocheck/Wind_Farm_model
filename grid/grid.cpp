@@ -26,7 +26,7 @@ void Model::loadGraphs()
     for( auto rawGraph : graphString->getData() )
     {
         auto rawToInt = [&](int x){ return std::stoi( rawGraph.at( x ) ); };
-        auto rawToFloat = [&](int x){ return std::atof( rawGraph.at( x ).c_str() ) };
+        auto rawToFloat = [&](int x){ return std::atof( rawGraph.at( x ).c_str() ); };
 
         _elements[ std::stoi( rawGraph.at( 0 ) )].setElementNumber( rawToInt(0) );
         _elements[ std::stoi( rawGraph.at( 0 ) )].setNodesNumbers( rawToInt(1),rawToInt(2) );
