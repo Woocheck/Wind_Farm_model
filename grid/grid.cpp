@@ -15,6 +15,7 @@ void Model::reloadModel()
     loadGraphs();
     loadNodes();
     calculateAdmitanceMatrix();
+    std::cout << _admitanceMatrix << std::endl;
 }
 
 void Model::loadGraphs()
