@@ -47,14 +47,17 @@ void Model::loadNodes()
 
     for( auto rawNode : nodesString->getData() )
     {
-        _nodes[ std::stoi( rawNode.at( 0 ) )].setNumber( std::stoi( rawNode.at( 0 ) ) );
+        auto rawToInt = [&](int x){ return std::stoi( rawNode.at( x ) ); };
+        auto rawToFloat = [&](int x){ return std::atof( rawNode.at( x ).c_str() ); };
+
+        _nodes[ std::stoi( rawNode.at( 0 ) )].setNumber( rawToInt(0) );
         _nodes[ std::stoi( rawNode.at( 0 ) )].setName(rawNode.at( 1 ));
-        _nodes[ std::stoi( rawNode.at( 0 ) )].setParentNumber( std::stoi( rawNode.at( 2 ) ) );
-        _nodes[ std::stoi( rawNode.at( 0 ) )].setP( std::atof( rawNode.at( 3 ).c_str() ) );
-        _nodes[ std::stoi( rawNode.at( 0 ) )].setQ( std::atof( rawNode.at( 4 ).c_str() ) );
-        _nodes[ std::stoi( rawNode.at( 0 ) )].setVoltageModule( std::atof( rawNode.at( 5 ).c_str() ) );
-        _nodes[ std::stoi( rawNode.at( 0 ) )].setVoltageArgument( std::atof( rawNode.at( 6 ).c_str() ) );
-        _nodes[ std::stoi( rawNode.at( 0 ) )].setCategory( std::stoi( rawNode.at( 7 ) ) );
+        _nodes[ std::stoi( rawNode.at( 0 ) )].setParentNumber( rawToInt( 2 ) ) );
+        _nodes[ std::stoi( rawNode.at( 0 ) )].setP( rawToFloat( 3 ) );
+        _nodes[ std::stoi( rawNode.at( 0 ) )].setQ( rawToFloat( 4 ) );
+        _nodes[ std::stoi( rawNode.at( 0 ) )].setVoltageModule( rawToFloat( 5 ) );
+        _nodes[ std::stoi( rawNode.at( 0 ) )].setVoltageArgument( rawToFloat( 6 ) );
+        _nodes[ std::stoi( rawNode.at( 0 ) )].setCategory( rawToInt( 7 ) );
     }
 }
 void Model::calculateAdmitanceMatrix()
