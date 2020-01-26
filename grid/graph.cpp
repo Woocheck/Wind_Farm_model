@@ -101,9 +101,9 @@ void CableLine::setReactance( double reactance )
 {
     _reactance = reactance;
 }
-void CableLine::setSusceptance( double susceptance )
+void CableLine::setSusceptance( double capacity )
 {
-    _susceptance = susceptance; 
+    _susceptance = 2*M_1_PI*50*capacity; 
 }
 void CableLine::setLenght( double lenght )
 {

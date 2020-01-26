@@ -27,17 +27,18 @@ void Model::loadGraphs()
     {
         auto rawToInt = [&](int x){ return std::stoi( rawGraph.at( x ) ); };
         auto rawToFloat = [&](int x){ return std::atof( rawGraph.at( x ).c_str() ); };
+        auto position = [&](int x){ return std::stoi( rawGraph.at( x ) ); };
 
-        _elements[ std::stoi( rawGraph.at( 0 ) )].setElementNumber( rawToInt(0) );
-        _elements[ std::stoi( rawGraph.at( 0 ) )].setNodesNumbers( rawToInt(1),rawToInt(2) );
-        _elements[ std::stoi( rawGraph.at( 0 ) )].setName( rawGraph.at( 3 ) );
-        _elements[ std::stoi( rawGraph.at( 0 ) )].setVoltage( rawToFloat(4) );
-        _elements[ std::stoi( rawGraph.at( 0 ) )].setCrossection( rawToFloat( 5 ) );
-        _elements[ std::stoi( rawGraph.at( 0 ) )].setResistance( rawToFloat( 6 ) );
-        _elements[ std::stoi( rawGraph.at( 0 ) )].setReactance( rawToFloat( 7 ) );
-        _elements[ std::stoi( rawGraph.at( 0 ) )].setSusceptance( rawToFloat( 8 ) );
-        _elements[ std::stoi( rawGraph.at( 0 ) )].setLenght( rawToFloat( 9 ) );
-        _elements[ std::stoi( rawGraph.at( 0 ) )].setNominalId( rawToFloat( 10 ) );   
+        _elements[ position( 0 ) ].setElementNumber( rawToInt(0) );
+        _elements[ position( 0 ) ].setNodesNumbers( rawToInt(1),rawToInt(2) );
+        _elements[ position( 0 ) ].setName( rawGraph.at( 3 ) );
+        _elements[ position( 0 ) ].setVoltage( rawToFloat(4) );
+        _elements[ position( 0 ) ].setCrossection( rawToFloat( 5 ) );
+        _elements[ position( 0 ) ].setResistance( rawToFloat( 6 ) );
+        _elements[ position( 0 ) ].setReactance( rawToFloat( 7 ) );
+        _elements[ position( 0 ) ].setSusceptance( rawToFloat( 8 ) );
+        _elements[ position( 0 ) ].setLenght( rawToFloat( 9 ) );
+        _elements[ position( 0 ) ].setNominalId( rawToFloat( 10 ) );   
     }
 }
 void Model::loadNodes()
@@ -49,45 +50,41 @@ void Model::loadNodes()
     {
         auto rawToInt = [&](int x){ return std::stoi( rawNode.at( x ) ); };
         auto rawToFloat = [&](int x){ return std::atof( rawNode.at( x ).c_str() ); };
+        auto position = [&](int x){ return std::stoi( rawNode.at( x ) ); };
 
-        _nodes[ std::stoi( rawNode.at( 0 ) )].setNumber( rawToInt(0) );
-        _nodes[ std::stoi( rawNode.at( 0 ) )].setName(rawNode.at( 1 ));
-        _nodes[ std::stoi( rawNode.at( 0 ) )].setParentNumber( rawToInt( 2 ) ) );
-        _nodes[ std::stoi( rawNode.at( 0 ) )].setP( rawToFloat( 3 ) );
-        _nodes[ std::stoi( rawNode.at( 0 ) )].setQ( rawToFloat( 4 ) );
-        _nodes[ std::stoi( rawNode.at( 0 ) )].setVoltageModule( rawToFloat( 5 ) );
-        _nodes[ std::stoi( rawNode.at( 0 ) )].setVoltageArgument( rawToFloat( 6 ) );
-        _nodes[ std::stoi( rawNode.at( 0 ) )].setCategory( rawToInt( 7 ) );
+        _nodes[ position( 0 ) ].setNumber( rawToInt(0) );
+        _nodes[ position( 0 ) ].setName(rawNode.at( 1 ) );
+        _nodes[ position( 0 ) ].setParentNumber( rawToInt( 2 ) );
+        _nodes[ position( 0 ) ].setP( rawToFloat( 3 ) );
+        _nodes[ position( 0 ) ].setQ( rawToFloat( 4 ) );
+        _nodes[ position( 0 ) ].setVoltageModule( rawToFloat( 5 ) );
+        _nodes[ position( 0 ) ].setVoltageArgument( rawToFloat( 6 ) );
+        _nodes[ position( 0 ) ].setCategory( rawToInt( 7 ) );
     }
 }
 void Model::calculateAdmitanceMatrix()
 {
     auto matrixSize { _nodes.size() };
-    std::cout << "matrixSize" <<  matrixSize << "\n";
-    std::cout << "elementsSize" <<  _elements.size() << "\n";
     _admitanceMatrix.resize( matrixSize, matrixSize );
+
     for(auto element : _elements )
     {
         auto [i,j] = element.second.getNodesNumbers();
         std::complex<double> Z = std::real( element.second.getResistance() ) + std::imag( element.second.getReactance() );
-        std::complex<double> Z0 = std::imag( element.second.getSusceptance()/2 );
+        std::complex<double> Z0 = std::real( 0 ) + std::imag(element.second.getSusceptance()/2 );
+        std::cout << "Z0="<< element.second.getSusceptance() << " / " << Z0 << "\n";
         
         if( i!= j)
         {
             std::cout << i << ", " << j << "->";
             std::cout << i << ", " << std::real(1) / Z << "\n";
             _admitanceMatrix.at( i, j ) = std::real(1) / Z;
-        }
-        else 
-        {
-            std::cout << i << ", " << j << "->";
-            std::cout << i << ", " << ( std::real(1)/Z ) + ( std::imag(1)/Z0 ) << "\n";
-            _admitanceMatrix.at( i, i ) += ( std::real(1)/Z ) + ( std::imag(1)/Z0 );
-            _admitanceMatrix.at( j, j ) += ( std::real(1)/Z ) + ( std::imag(1)/Z0 );
-        }
-         
+        };
+        std::cout << i << ", " << j << "->";
+        std::cout << _admitanceMatrix.at( i, i ) << "+ " << ( std::real(1)/Z ) + ( std::imag(1)/Z0 ) << "\n";
+        _admitanceMatrix.at( i, i ) = _admitanceMatrix.at( i, i ) + ( std::real(1)/Z );// + ( std::imag(1)/Z0 );
+        _admitanceMatrix.at( j, j ) = _admitanceMatrix.at( i, i ) + ( std::real(1)/Z );// + ( std::imag(1)/Z0 );    
     }
-    
 }
 
 
