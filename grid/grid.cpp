@@ -71,16 +71,16 @@ void Model::calculateAdmitanceMatrix()
     {
         auto [i,j] = element.second.getNodesNumbers();
         std::complex<double> Z = std::real( element.second.getResistance() ) + std::imag( element.second.getReactance() );
-        std::complex<double> Z0 = std::imag(element.second.getSusceptance()/2 );
-        
+        std::complex<double> Z0 = std::imag( 1/( element.second.getSusceptance()/2 ) );
+
         if( i!= j)
         {
             _admitanceMatrix.at( i, j ) = std::real(1) / Z;
             _admitanceMatrix.at( j, i ) = std::real(1) / Z;
         };
-        std::cout << "Element = " << element.second.getSusceptance()/2 << "    Z0= " << Z0 <<"\n";
+        std::cout << "Element = " << element.second.getSusceptance()/2 << "   1/Element= " << 1/( element.second.getSusceptance()/2) << "    Z0= " << Z0 <<"\n";
         _admitanceMatrix.at( i, i ) = _admitanceMatrix.at( i, i ) + ( std::pow( Z0, -1 ) );
-        _admitanceMatrix.at( j, j ) = _admitanceMatrix.at( i, i ) + ( std::pow( Z0, -1 ) );    
+        _admitanceMatrix.at( j, j ) = _admitanceMatrix.at( i, i ) + Z0;    
     }
 }
 
