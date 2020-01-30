@@ -80,7 +80,12 @@ void Model::calculateAdmitanceMatrix()
         };
         std::cout << "Element = " << element.second.getSusceptance()/2 << "   1/Element= " << 1/( element.second.getSusceptance()/2) << "    Z0= " << Z0 <<"\n";
         _admitanceMatrix.at( i, i ) = _admitanceMatrix.at( i, i ) + Z0;
-        _admitanceMatrix.at( j, j ) = _admitanceMatrix.at( j, j ) + Z0;    
+        _admitanceMatrix.at( j, j ) = _admitanceMatrix.at( j, j ) + Z0;   
+        for(int x{0}; x < matrixSize; x++)
+        {
+            if(x!=i)
+                _admitanceMatrix.at( i, i ) += _admitanceMatrix.at( i, x );
+        } 
     }
 }
 
