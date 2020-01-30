@@ -84,7 +84,7 @@ void Model::calculateAdmitanceMatrix()
         for(int x{0}; x < matrixSize; x++)
         {
             if(x!=i)
-                _admitanceMatrix.at( i, i ) += _admitanceMatrix.at( i, x );
+                _admitanceMatrix.at( i, i ) += _admitanceMatrix.at( i, x  );
         } 
     }
 }
