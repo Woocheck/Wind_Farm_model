@@ -87,8 +87,6 @@ void Model::calculateAdmitanceMatrix()
             _admitanceMatrix.at( j, i ) = std::real(1) / Z;
         };
 
-        std::cout << "Reactance: " << element.second.getReactance() << " Z= " << Z <<" imag: "<< std::imag(Z) <<"\n";
-        std::cout << "Element = " << element.second.getSusceptance()/2 << "   1/Element= " << 1/( element.second.getSusceptance()/2) << "    Z0= " << Y0 << "\n";
         _admitanceMatrix.at( i, i ) = _admitanceMatrix.at( i, i ) + Y0;
         _admitanceMatrix.at( j, j ) = _admitanceMatrix.at( j, j ) + Y0;   
         
