@@ -1,6 +1,8 @@
 #include "./grid.h"
 #include <armadillo>
 
+using namespace std::complex_literals;
+
 std::complex<double> Model::strToComplex( std::string value )
 {
     std::istringstream is('(' + value + ')');
@@ -70,17 +72,19 @@ void Model::calculateAdmitanceMatrix()
     for(auto element : _elements )
     {
         auto [i,j] = element.second.getNodesNumbers();
-        std::complex<double> Z = std::real( element.second.getResistance() ) + std::imag( element.second.getReactance() );
-        std::complex<double> Z0 = std::real( 0 ) + std::imag( 1/( element.second.getSusceptance()/2 ) );
+        std::complex<double> Z = 0.0 + 0.0i;//element.second.getReactance() );
+        std::complex<double> Y0 = 0.0 + 0.0i;
 
         if( i!= j)
         {
             _admitanceMatrix.at( i, j ) = std::real(1) / Z;
             _admitanceMatrix.at( j, i ) = std::real(1) / Z;
         };
-        std::cout << "Element = " << element.second.getSusceptance()/2 << "   1/Element= " << 1/( element.second.getSusceptance()/2) << "    Z0= " << Z0 <<"\n";
-        _admitanceMatrix.at( i, i ) = _admitanceMatrix.at( i, i ) + Z0;
-        _admitanceMatrix.at( j, j ) = _admitanceMatrix.at( j, j ) + Z0;   
+
+        std::cout << "Reactance: " << element.second.getReactance() << " Z= " << Z <<" imag: "<< std::imag(Z) <<"\n";
+        std::cout << "Element = " << element.second.getSusceptance()/2 << "   1/Element= " << 1/( element.second.getSusceptance()/2) << "    Z0= " << Y0 << "\n";
+        _admitanceMatrix.at( i, i ) = _admitanceMatrix.at( i, i ) + Y0;
+        _admitanceMatrix.at( j, j ) = _admitanceMatrix.at( j, j ) + Y0;   
         for(int x{0}; x < matrixSize; x++)
         {
             if(x!=i)
