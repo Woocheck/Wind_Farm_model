@@ -72,8 +72,14 @@ void Model::calculateAdmitanceMatrix()
     for(auto element : _elements )
     {
         auto [i,j] = element.second.getNodesNumbers();
-        std::complex<double> Z = 0.0 + 0.0i;//element.second.getReactance() );
-        std::complex<double> Y0 = 0.0 + 0.0i;
+        
+        std::complex<double> Z;
+        Z.real( element.second.getResistance() );
+        Z.imag( element.second.getReactance() );
+
+        std::complex<double> Y0;
+        Y0.real( 0 );
+        Y0.imag( element.second.getSusceptance()/2 );
 
         if( i!= j)
         {
@@ -85,6 +91,7 @@ void Model::calculateAdmitanceMatrix()
         std::cout << "Element = " << element.second.getSusceptance()/2 << "   1/Element= " << 1/( element.second.getSusceptance()/2) << "    Z0= " << Y0 << "\n";
         _admitanceMatrix.at( i, i ) = _admitanceMatrix.at( i, i ) + Y0;
         _admitanceMatrix.at( j, j ) = _admitanceMatrix.at( j, j ) + Y0;   
+        
         for(int x{0}; x < matrixSize; x++)
         {
             if(x!=i)
