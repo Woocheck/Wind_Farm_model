@@ -87,8 +87,8 @@ void Model::calculateAdmitanceMatrix()
             _admitanceMatrix.at( j, i ) = std::real(1) / Z;
         };
 
-        _admitanceMatrix.at( i, i ) = _admitanceMatrix.at( i, i ) + Y0;
-        _admitanceMatrix.at( j, j ) = _admitanceMatrix.at( j, j ) + Y0;   
+        _admitanceMatrix.at( i, i ) = _admitanceMatrix.at( i, i ) + std::real(1) / Y0;
+        _admitanceMatrix.at( j, j ) = _admitanceMatrix.at( j, j ) + std::real(1) / Y0;   
         
         for(int x{0}; x < matrixSize; x++)
         {
