@@ -1,5 +1,5 @@
-#ifndef _POWER_H_
-#define _POWER_H_
+#ifndef _NEWTON_RAPHSON_H_
+#define _NEWTON_RAPHSON_H_
 
 
 class PowerFlow
