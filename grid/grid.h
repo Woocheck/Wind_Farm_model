@@ -22,6 +22,8 @@ class Model
     public:
         Model(){};
         void reloadModel();
+        arma::Mat<std::complex<double>> getAdmitanceMatrix();
+
 
     private:
         std::complex<double> strToComplex( std::string value ); 

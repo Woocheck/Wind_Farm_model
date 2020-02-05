@@ -20,6 +20,11 @@ void Model::reloadModel()
     std::cout << _admitanceMatrix << std::endl;
 }
 
+arma::Mat<std::complex<double>> Model::getAdmitanceMatrix()
+{
+    return _admitanceMatrix;
+}
+
 void Model::loadGraphs()
 {
     InputData graphFile( "./graphs.txt");
