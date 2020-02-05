@@ -25,6 +25,32 @@ arma::Mat<std::complex<double>> Model::getAdmitanceMatrix()
     return _admitanceMatrix;
 }
 
+int Model::getNumberReciving()
+{
+    int numberReciving {0};
+
+    for( auto node: _nodes)
+    {
+        if( node.second.getCategory() == 0 )
+            numberReciving++;
+    }
+    
+    return numberReciving;
+}
+
+int Model::getNumberSource()
+{
+    int numberSources {0};
+
+    for( auto node: _nodes)
+    {
+        if( node.second.getCategory() == 1 )
+            numberSources++;
+    }
+    
+    return numberSources;
+}
+
 void Model::loadGraphs()
 {
     InputData graphFile( "./graphs.txt");

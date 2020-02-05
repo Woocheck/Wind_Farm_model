@@ -23,6 +23,8 @@ class Model
         Model(){};
         void reloadModel();
         arma::Mat<std::complex<double>> getAdmitanceMatrix();
+        int getNumberReciving();
+        int getNumberSource();
 
 
     private:
