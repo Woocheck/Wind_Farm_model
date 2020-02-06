@@ -14,10 +14,19 @@ class NewtonRaphsonAlgorithm
     private:
         Model _grid;
         arma::Mat<std::complex<double>> Jacobian;
-
+        int nodesNuber;
+        int recivingNodes;
+        int sourceNodes;
+        int balanceNodes { 1 };
         
     public:
-        NewtonRaphsonAlgorithm( Model& grid ): _grid( grid){};
+        NewtonRaphsonAlgorithm( Model& grid ): _grid( grid)
+        {
+            recivingNodes = _grid.getNumberReciving();
+            sourceNodes = _grid.getNumberSource();
+            nodesNuber = recivingNodes + sourceNodes;
+            Jacobian.set_size( nodesNuber, nodesNuber );
+        };
         void calculate();
         
     private:
