@@ -18,6 +18,7 @@ class NewtonRaphsonAlgorithm
         int recivingNodes;
         int sourceNodes;
         int balanceNodes { 1 };
+        double epsilon { 0 };
         
     public:
         NewtonRaphsonAlgorithm( Model& grid ): _grid( grid)
@@ -25,7 +26,7 @@ class NewtonRaphsonAlgorithm
             recivingNodes = _grid.getNumberReciving();
             sourceNodes = _grid.getNumberSource();
             nodesNuber = recivingNodes + sourceNodes;
-            Jacobian.set_size( nodesNuber, nodesNuber );
+            Jacobian.set_size( nodesNuber + sourceNodes, nodesNuber + sourceNodes);
         };
         void calculate();
         
