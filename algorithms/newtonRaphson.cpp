@@ -6,13 +6,30 @@ void NewtonRaphsonAlgorithm::calculate()
 }
 void NewtonRaphsonAlgorithm::imbalanceCalculation()
 {
-    auto Y = _grid.getAdmitanceMatrix();
-    auto recivingNodes = _grid.getNumberReciving();
 
 }
 void NewtonRaphsonAlgorithm::jacobianMatrixCalculation()
 {
-
+   for( int i { 0 }; i < recivingNodes + sourceNodes; i++ )
+    for( int j { 0 }; j < recivingNodes + sourceNodes; j++ )
+    {
+        if( isH( i, j ) )
+        {
+            Jacobian( i, j ) = H( i, j );
+        }
+        else if( isN( i, j ) )
+        {
+            Jacobian( i, j ) = H( i, j );
+        }
+        else if( isK( i, j ) )
+        {
+            Jacobian( i, j ) = K( i, j );
+        }
+        else if( isL( i, j ) )
+        {
+            Jacobian( i, j ) = L( i, j );
+        }
+    }
 }
 void NewtonRaphsonAlgorithm::equationSystemResolve()
 {
@@ -25,4 +42,37 @@ void NewtonRaphsonAlgorithm::calculateNewStateVector()
 bool NewtonRaphsonAlgorithm::isEpsilonGreater()
 {
     
+}
+std::complex<double> NewtonRaphsonAlgorithm::H(int i, int j)
+{
+
+}
+std::complex<double> NewtonRaphsonAlgorithm::N(int i, int j)
+{
+
+}
+std::complex<double> NewtonRaphsonAlgorithm::K(int i, int j)
+{
+
+}
+std::complex<double> NewtonRaphsonAlgorithm::L(int i, int j)
+{
+
+}
+bool NewtonRaphsonAlgorithm::isH( int i, int j )
+{
+    return i < recivingNodes && j < sourceNodes;
+}
+bool NewtonRaphsonAlgorithm::isN( int i, int j )
+{
+    return i < recivingNodes && j < recivingNodes + sourceNodes;
+}
+bool NewtonRaphsonAlgorithm::isK( int i, int j )
+{
+    return i >= recivingNodes && i < recivingNodes + sourceNodes && j < recivingNodes;
+}
+bool NewtonRaphsonAlgorithm::isL( int i, int j )
+{
+    return     i >= recivingNodes && i < recivingNodes + sourceNodes 
+            && j >= recivingNodes && j < recivingNodes + sourceNodes;
 }
