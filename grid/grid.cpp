@@ -129,4 +129,14 @@ void Model::calculateAdmitanceMatrix()
     }
 }
 
+double Model::getNodeU( int i )
+{
+    return _nodes.at( i ).getVoltageArgument();
+}
+
+double Model::getNodeArgU( int i )
+{
+    return _nodes.at( i ).getVoltageModule();
+}
+
 

@@ -25,6 +25,8 @@ class Model
         arma::Mat<std::complex<double>> getAdmitanceMatrix();
         int getNumberReciving();
         int getNumberSource();
+        double getNodeU( int i );
+        double getNodeArgU( int i );
 
 
     private:
