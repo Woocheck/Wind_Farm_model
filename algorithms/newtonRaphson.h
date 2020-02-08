@@ -13,7 +13,7 @@ class NewtonRaphsonAlgorithm
 {
     private:
         Model _grid;
-        arma::Mat<std::complex<double>> Jacobian;
+        arma::Mat<double> Jacobian;
         int nodesNuber;
         int recivingNodes;
         int sourceNodes;
@@ -36,10 +36,10 @@ class NewtonRaphsonAlgorithm
         void equationSystemResolve();
         void calculateNewStateVector();
         bool isEpsilonGreater();
-        std::complex<double> H(int i, int j);
-        std::complex<double> N(int i, int j);
-        std::complex<double> K(int i, int j);
-        std::complex<double> L(int i, int j);
+        double H(int i, int j);
+        double N(int i, int j);
+        double K(int i, int j);
+        double L(int i, int j);
         bool isH( int i, int j );
         bool isN( int i, int j );
         bool isK( int i, int j );

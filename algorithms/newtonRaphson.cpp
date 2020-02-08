@@ -19,7 +19,7 @@ void NewtonRaphsonAlgorithm::jacobianMatrixCalculation()
         }
         else if( isN( i, j ) )
         {
-            Jacobian( i, j ) = H( i, j );
+            Jacobian( i, j ) = N( i, j );
         }
         else if( isK( i, j ) )
         {
@@ -43,19 +43,28 @@ bool NewtonRaphsonAlgorithm::isEpsilonGreater()
 {
     
 }
-std::complex<double> NewtonRaphsonAlgorithm::H(int i, int j)
+double NewtonRaphsonAlgorithm::H(int i, int j)
+{
+    auto Ui = _grid.getNodeU( i );
+    auto Uj = _grid.getNodeU( j );
+    auto Di = _grid.getNodeArgU( i );
+    auto Dj = _grid.getNodeArgU( j );
+    auto Y = _grid.getAdmitanceMatrix();
+    auto Gij = Y.at( i, j ).real();
+    auto Bij = Y.at( i, j ).imag();
+
+    return Ui * Uj *( Gij * sin(Di-Dj) - Bij * cos(Di-Dj) ); 
+}
+
+double NewtonRaphsonAlgorithm::N(int i, int j)
 {
 
 }
-std::complex<double> NewtonRaphsonAlgorithm::N(int i, int j)
+double NewtonRaphsonAlgorithm::K(int i, int j)
 {
 
 }
-std::complex<double> NewtonRaphsonAlgorithm::K(int i, int j)
-{
-
-}
-std::complex<double> NewtonRaphsonAlgorithm::L(int i, int j)
+double NewtonRaphsonAlgorithm::L(int i, int j)
 {
 
 }
