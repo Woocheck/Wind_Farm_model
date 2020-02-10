@@ -74,7 +74,7 @@ double NewtonRaphsonAlgorithm::N(int i, int j)
         double result {0};
         {
             auto [Ui, Uj, Di, Dj, Gij, Bij] = getGraphParameters( i, i );
-            result += Ui * Gij;
+            result += 2 * Ui * Gij;
         }
         for( int a=0; a<j; a++)
         {
@@ -86,11 +86,43 @@ double NewtonRaphsonAlgorithm::N(int i, int j)
 }
 double NewtonRaphsonAlgorithm::K(int i, int j)
 {
-
+    if( i != j)
+    {
+        auto [Ui, Uj, Di, Dj, Gij, Bij] = getGraphParameters( i, j );
+        return -1 * Ui * Uj * ( Gij * sin(Di-Dj) + Bij * cos(Di-Dj) ); 
+    }
+    else if( i = j )
+    {
+        double result {0};
+        for( int a=0; a<j; a++)
+        {
+            auto [Ui, Uj, Di, Dj, Gij, Bij] = getGraphParameters( i, a );
+            result += Ui * Uj * ( Gij * sin(Di-Dj) + Bij * cos(Di-Dj) );
+        }
+        return result;
+    }
 }
 double NewtonRaphsonAlgorithm::L(int i, int j)
 {
-
+    if( i != j)
+    {
+        auto [Ui, Uj, Di, Dj, Gij, Bij] = getGraphParameters( i, j );
+        return Ui * ( Gij * sin(Di-Dj) - Bij * cos(Di-Dj) ); 
+    }
+    else if( i = j )
+    {
+        double result {0};
+        {
+            auto [Ui, Uj, Di, Dj, Gij, Bij] = getGraphParameters( i, i );
+            result += -2 * Ui * Gij;
+        }
+        for( int a=0; a<j; a++)
+        {
+            auto [Ui, Uj, Di, Dj, Gij, Bij] = getGraphParameters( i, a );
+            result += Ui * Uj *( Gij * sin(Di-Dj) - Bij * cos(Di-Dj) );
+        }
+        return result;
+    }
 }
 bool NewtonRaphsonAlgorithm::isH( int i, int j )
 {
