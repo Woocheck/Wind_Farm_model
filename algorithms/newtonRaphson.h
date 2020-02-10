@@ -15,11 +15,13 @@ class NewtonRaphsonAlgorithm
     private:
         Model _grid;
         arma::Mat<double> Jacobian;
+        arma::Col<double> imbalanceVal;
+        arma::Col<double> valuesUD;
         int nodesNuber;
         int recivingNodes;
         int sourceNodes;
         int balanceNodes { 1 };
-        double epsilon { 0 };
+        double epsilon { 10 };
         
     public:
         NewtonRaphsonAlgorithm( Model& grid ): _grid( grid)
@@ -28,6 +30,8 @@ class NewtonRaphsonAlgorithm
             sourceNodes = _grid.getNumberSource();
             nodesNuber = recivingNodes + sourceNodes;
             Jacobian.set_size( nodesNuber + sourceNodes, nodesNuber + sourceNodes);
+            imbalanceVal.set_size( nodesNuber + sourceNodes );
+            valuesUD.set_size( nodesNuber + sourceNodes );
         };
         void calculate();
         
@@ -46,6 +50,7 @@ class NewtonRaphsonAlgorithm
         bool isK( int i, int j );
         bool isL( int i, int j );
         auto getGraphParameters( int i, int j );
+        auto getValuesUD();
         
 };
 

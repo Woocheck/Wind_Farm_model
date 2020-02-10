@@ -6,8 +6,10 @@ void NewtonRaphsonAlgorithm::calculate()
 }
 void NewtonRaphsonAlgorithm::imbalanceCalculation()
 {
-
+  valuesUD = getValuesUD();
+  imbalanceVal = Jacobian  * valuesUD;
 }
+
 void NewtonRaphsonAlgorithm::jacobianMatrixCalculation()
 {
    for( int i { 0 }; i < recivingNodes + sourceNodes; i++ )
@@ -150,5 +152,19 @@ auto NewtonRaphsonAlgorithm::getGraphParameters( int i, int j )
                             _grid.getNodeArgU( j ),
                             Y.at( i, j ).real(),
                             Y.at( i, j ).imag());
+}
+auto NewtonRaphsonAlgorithm::getValuesUD()
+{
+    arma::Col<double> result( nodesNuber + sourceNodes );
+    
+     for( int i{0}; i < recivingNodes; i++ )
+   {
+       result.at( i ) = _grid.getNodeU[ i ];
+   }
+   for( int i = recivingNodes; i < nodesNuber; i++)
+   {
+       result.at( i ) = _grid.getNodeArgU[ i ];
+   }
+   return result;
 }
 
