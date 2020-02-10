@@ -7,6 +7,7 @@
 #include <sstream>
 #include <armadillo>
 
+
 #include "./node.h"
 #include "./graph.h"
 #include "../file/file_model.h"
@@ -27,7 +28,6 @@ class Model
         int getNumberSource();
         double getNodeU( int i );
         double getNodeArgU( int i );
-
 
     private:
         std::complex<double> strToComplex( std::string value ); 
