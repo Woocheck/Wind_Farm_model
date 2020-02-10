@@ -45,15 +45,22 @@ bool NewtonRaphsonAlgorithm::isEpsilonGreater()
 }
 double NewtonRaphsonAlgorithm::H(int i, int j)
 {
-    auto Ui = _grid.getNodeU( i );
-    auto Uj = _grid.getNodeU( j );
-    auto Di = _grid.getNodeArgU( i );
-    auto Dj = _grid.getNodeArgU( j );
-    auto Y = _grid.getAdmitanceMatrix();
-    auto Gij = Y.at( i, j ).real();
-    auto Bij = Y.at( i, j ).imag();
+    if( i != j)
+    {
+        auto [Ui, Uj, Di, Dj, Gij, Bij] = getGraphParameters( i, j );
+        return Ui * Uj *( Gij * sin(Di-Dj) - Bij * cos(Di-Dj) ); 
+    }
+    else if( i = j )
+    {
+        double result {0};
+        for( int a=0; a<j; a++)
+        {
+            auto [Ui, Uj, Di, Dj, Gij, Bij] = getGraphParameters( i, a );
+            result += -1 * Ui * Uj *( Gij * sin(Di-Dj) - Bij * cos(Di-Dj) );
+        }
 
-    return Ui * Uj *( Gij * sin(Di-Dj) - Bij * cos(Di-Dj) ); 
+        return result;
+    }
 }
 
 double NewtonRaphsonAlgorithm::N(int i, int j)
@@ -85,3 +92,14 @@ bool NewtonRaphsonAlgorithm::isL( int i, int j )
     return     i >= recivingNodes && i < recivingNodes + sourceNodes 
             && j >= recivingNodes && j < recivingNodes + sourceNodes;
 }
+auto NewtonRaphsonAlgorithm::getGraphParameters( int i, int j )
+{   
+    auto Y = _grid.getAdmitanceMatrix();
+    return std::make_tuple( _grid.getNodeU( i ),
+                            _grid.getNodeU( j ),
+                            _grid.getNodeArgU( i ),
+                            _grid.getNodeArgU( j ),
+                            Y.at( i, j ).real(),
+                            Y.at( i, j ).imag());
+}
+

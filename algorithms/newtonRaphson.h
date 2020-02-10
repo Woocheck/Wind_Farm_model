@@ -6,6 +6,7 @@
 #include <complex>
 #include <sstream>
 #include <armadillo>
+#include <tuple>
 
 #include "../grid/grid.h"
 
@@ -44,6 +45,8 @@ class NewtonRaphsonAlgorithm
         bool isN( int i, int j );
         bool isK( int i, int j );
         bool isL( int i, int j );
+        auto getGraphParameters( int i, int j );
+        
 };
 
 #endif
