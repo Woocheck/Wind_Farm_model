@@ -58,7 +58,6 @@ double NewtonRaphsonAlgorithm::H(int i, int j)
             auto [Ui, Uj, Di, Dj, Gij, Bij] = getGraphParameters( i, a );
             result += -1 * Ui * Uj *( Gij * sin(Di-Dj) - Bij * cos(Di-Dj) );
         }
-
         return result;
     }
 }
