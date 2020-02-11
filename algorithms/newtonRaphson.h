@@ -7,6 +7,7 @@
 #include <sstream>
 #include <armadillo>
 #include <tuple>
+#include <algorithm>
 
 #include "../grid/grid.h"
 
