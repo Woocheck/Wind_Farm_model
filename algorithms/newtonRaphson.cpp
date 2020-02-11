@@ -35,7 +35,7 @@ void NewtonRaphsonAlgorithm::jacobianMatrixCalculation()
 }
 void NewtonRaphsonAlgorithm::equationSystemResolve()
 {
-
+    arma::solve(valuesUD, Jacobian, imbalanceVal);
 }
 void NewtonRaphsonAlgorithm::calculateNewStateVector()
 {
@@ -43,7 +43,7 @@ void NewtonRaphsonAlgorithm::calculateNewStateVector()
 }
 bool NewtonRaphsonAlgorithm::isEpsilonGreater()
 {
-    
+    return  *(std::max_element( imbalanceVal.begin(), imbalanceVal.end() )) < epsilon;
 }
 double NewtonRaphsonAlgorithm::H(int i, int j)
 {
