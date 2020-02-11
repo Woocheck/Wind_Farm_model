@@ -35,7 +35,7 @@ void NewtonRaphsonAlgorithm::jacobianMatrixCalculation()
 }
 void NewtonRaphsonAlgorithm::equationSystemResolve()
 {
-    arma::solve(valuesUD, Jacobian, imbalanceVal);
+
 }
 void NewtonRaphsonAlgorithm::calculateNewStateVector()
 {
