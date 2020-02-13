@@ -9,6 +9,7 @@ file(GLOB ALL_FILE file/*.cpp)
 set(ALL_SOURCES main.cpp ${ALL_GRID} ${ALL_FILE})
 set(EXEC main)
 
+
 include_directories( file grid )
 add_definitions(-std=c++17 -Wall -pedantic)
 add_executable( ${EXEC} ${ALL_SOURCES})
