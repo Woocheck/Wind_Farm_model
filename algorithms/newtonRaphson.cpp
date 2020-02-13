@@ -2,7 +2,13 @@
 
 void NewtonRaphsonAlgorithm::calculate()
 {
-
+  jacobianMatrixCalculation();
+  imbalanceCalculation();
+  while( !isEpsilonGreater() )
+  {
+    equationSystemResolve();
+    calculateNewStateVector();
+  }
 }
 void NewtonRaphsonAlgorithm::imbalanceCalculation()
 {
