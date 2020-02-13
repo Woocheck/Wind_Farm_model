@@ -52,7 +52,6 @@ class NewtonRaphsonAlgorithm
         bool isL( int i, int j );
         auto getGraphParameters( int i, int j );
         auto getValuesUD();
-        
 };
 
 #endif
