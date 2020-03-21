@@ -10,6 +10,7 @@ void NewtonRaphsonAlgorithm::calculate()
     calculateNewStateVector();
   }
 }
+
 void NewtonRaphsonAlgorithm::imbalanceCalculation()
 {
   valuesUD = getValuesUD();
