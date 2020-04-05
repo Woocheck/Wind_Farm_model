@@ -46,7 +46,7 @@ void NewtonRaphsonAlgorithm::equationSystemResolve()
 }
 void NewtonRaphsonAlgorithm::calculateNewStateVector()
 {
- 
+    valuesUD = valuesUD + imbalanceVal;
 }
 bool NewtonRaphsonAlgorithm::isEpsilonGreater()
 {
