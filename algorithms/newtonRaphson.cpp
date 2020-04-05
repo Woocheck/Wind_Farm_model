@@ -8,6 +8,7 @@ void NewtonRaphsonAlgorithm::calculate()
   {
     equationSystemResolve();
     calculateNewStateVector();
+    imbalanceCalculation();
   }
 }
 
