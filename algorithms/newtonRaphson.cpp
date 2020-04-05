@@ -46,7 +46,7 @@ void NewtonRaphsonAlgorithm::equationSystemResolve()
 }
 void NewtonRaphsonAlgorithm::calculateNewStateVector()
 {
-
+ 
 }
 bool NewtonRaphsonAlgorithm::isEpsilonGreater()
 {
@@ -164,14 +164,14 @@ auto NewtonRaphsonAlgorithm::getValuesUD()
 {
     arma::Col<double> result( nodesNuber + sourceNodes );
     
-     for( int i{0}; i < recivingNodes; i++ )
-   {
-       result.at( i ) = _grid.getNodeU[ i ];
-   }
-   for( int i = recivingNodes; i < nodesNuber; i++)
-   {
-       result.at( i ) = _grid.getNodeArgU[ i ];
-   }
+    for( int i{0}; i < recivingNodes; i++ )
+    {
+        result.at( i ) = _grid.getNodeU[ i ];
+    }
+    for( int i = recivingNodes; i < nodesNuber; i++)
+    {
+        result.at( i ) = _grid.getNodeArgU[ i ];
+    }
    return result;
 }
 
