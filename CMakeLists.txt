@@ -6,7 +6,8 @@ set(CMAKE_CXX_STANDARD 17)
 
 file(GLOB ALL_GRID grid/*.cpp)
 file(GLOB ALL_FILE file/*.cpp)
-set(ALL_SOURCES main.cpp ${ALL_GRID} ${ALL_FILE})
+file(GLOB ALL_ALGORITHMS algorithms/*.cpp)
+set(ALL_SOURCES main.cpp ${ALL_GRID} ${ALL_FILE} ${ALL_ALGORITHMS})
 set(EXEC main)
 
 

@@ -51,7 +51,7 @@ class NewtonRaphsonAlgorithm
         bool isK( int i, int j );
         bool isL( int i, int j );
         auto getGraphParameters( int i, int j );
-        auto getValuesUD();
+        arma::Col<double> getValuesUD();
 };
 
 #endif

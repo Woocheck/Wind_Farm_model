@@ -1,32 +1,37 @@
 [
 {
-  "directory": "/home/user/workspace_Wind_Farm/Wind_Farm_model/build",
-  "command": "/usr/bin/g++   -I/home/user/workspace_Wind_Farm/Wind_Farm_model/file -I/home/user/workspace_Wind_Farm/Wind_Farm_model/grid  -g   -std=c++17 -Wall -pedantic -std=gnu++17 -o CMakeFiles/main.dir/main.cpp.o -c /home/user/workspace_Wind_Farm/Wind_Farm_model/main.cpp",
-  "file": "/home/user/workspace_Wind_Farm/Wind_Farm_model/main.cpp"
+  "directory": "/home/woocheck/Workspace_model/Wind_Farm_model/build",
+  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/file -I/home/woocheck/Workspace_model/Wind_Farm_model/grid  -g   -std=c++17 -Wall -pedantic -std=gnu++17 -o CMakeFiles/main.dir/main.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/main.cpp",
+  "file": "/home/woocheck/Workspace_model/Wind_Farm_model/main.cpp"
 },
 {
-  "directory": "/home/user/workspace_Wind_Farm/Wind_Farm_model/build",
-  "command": "/usr/bin/g++   -I/home/user/workspace_Wind_Farm/Wind_Farm_model/file -I/home/user/workspace_Wind_Farm/Wind_Farm_model/grid  -g   -std=c++17 -Wall -pedantic -std=gnu++17 -o CMakeFiles/main.dir/grid/graph.cpp.o -c /home/user/workspace_Wind_Farm/Wind_Farm_model/grid/graph.cpp",
-  "file": "/home/user/workspace_Wind_Farm/Wind_Farm_model/grid/graph.cpp"
+  "directory": "/home/woocheck/Workspace_model/Wind_Farm_model/build",
+  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/file -I/home/woocheck/Workspace_model/Wind_Farm_model/grid  -g   -std=c++17 -Wall -pedantic -std=gnu++17 -o CMakeFiles/main.dir/grid/graph.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/grid/graph.cpp",
+  "file": "/home/woocheck/Workspace_model/Wind_Farm_model/grid/graph.cpp"
 },
 {
-  "directory": "/home/user/workspace_Wind_Farm/Wind_Farm_model/build",
-  "command": "/usr/bin/g++   -I/home/user/workspace_Wind_Farm/Wind_Farm_model/file -I/home/user/workspace_Wind_Farm/Wind_Farm_model/grid  -g   -std=c++17 -Wall -pedantic -std=gnu++17 -o CMakeFiles/main.dir/grid/grid.cpp.o -c /home/user/workspace_Wind_Farm/Wind_Farm_model/grid/grid.cpp",
-  "file": "/home/user/workspace_Wind_Farm/Wind_Farm_model/grid/grid.cpp"
+  "directory": "/home/woocheck/Workspace_model/Wind_Farm_model/build",
+  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/file -I/home/woocheck/Workspace_model/Wind_Farm_model/grid  -g   -std=c++17 -Wall -pedantic -std=gnu++17 -o CMakeFiles/main.dir/grid/grid.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/grid/grid.cpp",
+  "file": "/home/woocheck/Workspace_model/Wind_Farm_model/grid/grid.cpp"
 },
 {
-  "directory": "/home/user/workspace_Wind_Farm/Wind_Farm_model/build",
-  "command": "/usr/bin/g++   -I/home/user/workspace_Wind_Farm/Wind_Farm_model/file -I/home/user/workspace_Wind_Farm/Wind_Farm_model/grid  -g   -std=c++17 -Wall -pedantic -std=gnu++17 -o CMakeFiles/main.dir/grid/node.cpp.o -c /home/user/workspace_Wind_Farm/Wind_Farm_model/grid/node.cpp",
-  "file": "/home/user/workspace_Wind_Farm/Wind_Farm_model/grid/node.cpp"
+  "directory": "/home/woocheck/Workspace_model/Wind_Farm_model/build",
+  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/file -I/home/woocheck/Workspace_model/Wind_Farm_model/grid  -g   -std=c++17 -Wall -pedantic -std=gnu++17 -o CMakeFiles/main.dir/grid/node.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/grid/node.cpp",
+  "file": "/home/woocheck/Workspace_model/Wind_Farm_model/grid/node.cpp"
 },
 {
-  "directory": "/home/user/workspace_Wind_Farm/Wind_Farm_model/build",
-  "command": "/usr/bin/g++   -I/home/user/workspace_Wind_Farm/Wind_Farm_model/file -I/home/user/workspace_Wind_Farm/Wind_Farm_model/grid  -g   -std=c++17 -Wall -pedantic -std=gnu++17 -o CMakeFiles/main.dir/grid/turbine.cpp.o -c /home/user/workspace_Wind_Farm/Wind_Farm_model/grid/turbine.cpp",
-  "file": "/home/user/workspace_Wind_Farm/Wind_Farm_model/grid/turbine.cpp"
+  "directory": "/home/woocheck/Workspace_model/Wind_Farm_model/build",
+  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/file -I/home/woocheck/Workspace_model/Wind_Farm_model/grid  -g   -std=c++17 -Wall -pedantic -std=gnu++17 -o CMakeFiles/main.dir/grid/turbine.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/grid/turbine.cpp",
+  "file": "/home/woocheck/Workspace_model/Wind_Farm_model/grid/turbine.cpp"
 },
 {
-  "directory": "/home/user/workspace_Wind_Farm/Wind_Farm_model/build",
-  "command": "/usr/bin/g++   -I/home/user/workspace_Wind_Farm/Wind_Farm_model/file -I/home/user/workspace_Wind_Farm/Wind_Farm_model/grid  -g   -std=c++17 -Wall -pedantic -std=gnu++17 -o CMakeFiles/main.dir/file/file_model.cpp.o -c /home/user/workspace_Wind_Farm/Wind_Farm_model/file/file_model.cpp",
-  "file": "/home/user/workspace_Wind_Farm/Wind_Farm_model/file/file_model.cpp"
+  "directory": "/home/woocheck/Workspace_model/Wind_Farm_model/build",
+  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/file -I/home/woocheck/Workspace_model/Wind_Farm_model/grid  -g   -std=c++17 -Wall -pedantic -std=gnu++17 -o CMakeFiles/main.dir/file/file_model.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/file/file_model.cpp",
+  "file": "/home/woocheck/Workspace_model/Wind_Farm_model/file/file_model.cpp"
+},
+{
+  "directory": "/home/woocheck/Workspace_model/Wind_Farm_model/build",
+  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/file -I/home/woocheck/Workspace_model/Wind_Farm_model/grid  -g   -std=c++17 -Wall -pedantic -std=gnu++17 -o CMakeFiles/main.dir/algorithms/newtonRaphson.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/algorithms/newtonRaphson.cpp",
+  "file": "/home/woocheck/Workspace_model/Wind_Farm_model/algorithms/newtonRaphson.cpp"
 }
 ]

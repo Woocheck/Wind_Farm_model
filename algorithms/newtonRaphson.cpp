@@ -60,7 +60,7 @@ double NewtonRaphsonAlgorithm::H(int i, int j)
         auto [Ui, Uj, Di, Dj, Gij, Bij] = getGraphParameters( i, j );
         return Ui * Uj * ( Gij * sin(Di-Dj) - Bij * cos(Di-Dj) ); 
     }
-    else if( i = j )
+    else if( i == j )
     {
         double result {0};
         for( int a=0; a<j; a++)
@@ -79,7 +79,7 @@ double NewtonRaphsonAlgorithm::N(int i, int j)
         auto [Ui, Uj, Di, Dj, Gij, Bij] = getGraphParameters( i, j );
         return Ui * ( Gij * sin(Di-Dj) + Bij * cos(Di-Dj) ); 
     }
-    else if( i = j )
+    else if( i == j )
     {
         double result {0};
         {
@@ -101,7 +101,7 @@ double NewtonRaphsonAlgorithm::K(int i, int j)
         auto [Ui, Uj, Di, Dj, Gij, Bij] = getGraphParameters( i, j );
         return -1 * Ui * Uj * ( Gij * sin(Di-Dj) + Bij * cos(Di-Dj) ); 
     }
-    else if( i = j )
+    else if( i == j )
     {
         double result {0};
         for( int a=0; a<j; a++)
@@ -119,7 +119,7 @@ double NewtonRaphsonAlgorithm::L(int i, int j)
         auto [Ui, Uj, Di, Dj, Gij, Bij] = getGraphParameters( i, j );
         return Ui * ( Gij * sin(Di-Dj) - Bij * cos(Di-Dj) ); 
     }
-    else if( i = j )
+    else if( i == j )
     {
         double result {0};
         {
@@ -153,7 +153,7 @@ bool NewtonRaphsonAlgorithm::isL( int i, int j )
 }
 auto NewtonRaphsonAlgorithm::getGraphParameters( int i, int j )
 {   
-    auto Y = _grid.getAdmitanceMatrix();
+    arma::Mat<std::complex<double>> Y = _grid.getAdmitanceMatrix();
     return std::make_tuple( _grid.getNodeU( i ),
                             _grid.getNodeU( j ),
                             _grid.getNodeArgU( i ),
@@ -161,7 +161,7 @@ auto NewtonRaphsonAlgorithm::getGraphParameters( int i, int j )
                             Y.at( i, j ).real(),
                             Y.at( i, j ).imag());
 }
-auto NewtonRaphsonAlgorithm::getValuesUD()
+arma::Col<double> NewtonRaphsonAlgorithm::getValuesUD()
 {
     arma::Col<double> result( nodesNuber + sourceNodes );
     
