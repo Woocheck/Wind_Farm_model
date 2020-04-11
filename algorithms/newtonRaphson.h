@@ -50,7 +50,7 @@ class NewtonRaphsonAlgorithm
         bool isN( int i, int j );
         bool isK( int i, int j );
         bool isL( int i, int j );
-        auto getGraphParameters( int i, int j );
+        std::tuple< double, double, double, double, double, double > getGraphParameters( int i, int j );
         arma::Col<double> getValuesUD();
 };
 

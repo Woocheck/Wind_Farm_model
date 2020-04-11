@@ -151,7 +151,7 @@ bool NewtonRaphsonAlgorithm::isL( int i, int j )
     return     i >= recivingNodes && i < recivingNodes + sourceNodes 
             && j >= recivingNodes && j < recivingNodes + sourceNodes;
 }
-auto NewtonRaphsonAlgorithm::getGraphParameters( int i, int j )
+std::tuple< double, double, double, double, double, double > NewtonRaphsonAlgorithm::getGraphParameters( int i, int j )
 {   
     arma::Mat<std::complex<double>> Y = _grid.getAdmitanceMatrix();
     return std::make_tuple( _grid.getNodeU( i ),
@@ -167,11 +167,11 @@ arma::Col<double> NewtonRaphsonAlgorithm::getValuesUD()
     
     for( int i{0}; i < recivingNodes; i++ )
     {
-        result.at( i ) = _grid.getNodeU[ i ];
+        result.at( i ) = _grid.getNodeU( i );
     }
     for( int i = recivingNodes; i < nodesNuber; i++)
     {
-        result.at( i ) = _grid.getNodeArgU[ i ];
+        result.at( i ) = _grid.getNodeArgU( i );
     }
    return result;
 }
