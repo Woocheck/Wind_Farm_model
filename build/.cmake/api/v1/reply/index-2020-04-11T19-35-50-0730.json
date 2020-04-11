@@ -3,6 +3,7 @@
 	{
 		"generator" : 
 		{
+			"multiConfig" : false,
 			"name" : "Unix Makefiles"
 		},
 		"paths" : 
@@ -16,16 +17,16 @@
 		{
 			"isDirty" : false,
 			"major" : 3,
-			"minor" : 16,
-			"patch" : 4,
-			"string" : "3.16.4",
+			"minor" : 17,
+			"patch" : 0,
+			"string" : "3.17.0",
 			"suffix" : ""
 		}
 	},
 	"objects" : 
 	[
 		{
-			"jsonFile" : "codemodel-v2-8eebfb3f67d9aa58c79b.json",
+			"jsonFile" : "codemodel-v2-3de0dec93ea54834ece6.json",
 			"kind" : "codemodel",
 			"version" : 
 			{
@@ -34,7 +35,7 @@
 			}
 		},
 		{
-			"jsonFile" : "cache-v2-e28b2067c9fb423ed114.json",
+			"jsonFile" : "cache-v2-bdfb2bf8f626e7c1462f.json",
 			"kind" : "cache",
 			"version" : 
 			{
@@ -63,7 +64,7 @@
 				"responses" : 
 				[
 					{
-						"jsonFile" : "cache-v2-e28b2067c9fb423ed114.json",
+						"jsonFile" : "cache-v2-bdfb2bf8f626e7c1462f.json",
 						"kind" : "cache",
 						"version" : 
 						{
@@ -72,7 +73,7 @@
 						}
 					},
 					{
-						"jsonFile" : "codemodel-v2-8eebfb3f67d9aa58c79b.json",
+						"jsonFile" : "codemodel-v2-3de0dec93ea54834ece6.json",
 						"kind" : "codemodel",
 						"version" : 
 						{

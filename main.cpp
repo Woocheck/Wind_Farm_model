@@ -2,6 +2,7 @@
 #include <math.h>
 #include <complex>
 
+
 #include "./grid/grid.h"
 
 int main(int argc, char const *argv[])
