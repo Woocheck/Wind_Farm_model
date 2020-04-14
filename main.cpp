@@ -4,6 +4,7 @@
 
 
 #include "./grid/grid.h"
+#include "./algorithms/newtonRaphson.h"
 
 int main(int argc, char const *argv[])
 {
@@ -45,6 +46,10 @@ int main(int argc, char const *argv[])
     Model grid;
 
     grid.reloadModel();
+
+    NewtonRaphsonAlgorithm  nrAlgorithm( grid );
+    
+    nrAlgorithm.calculate();
     
     return 0;
 }
