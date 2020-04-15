@@ -8,7 +8,7 @@
 
 int main(int argc, char const *argv[])
 {
-{
+//{
     InputData data("graphs.txt");
     
     auto dataPointer { std::make_shared<InputData>( data )};

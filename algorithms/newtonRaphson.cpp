@@ -9,6 +9,7 @@ void NewtonRaphsonAlgorithm::calculate()
     equationSystemResolve();
     calculateNewStateVector();
     imbalanceCalculation();
+    std::cout << " loop ";
   }
 }
 
