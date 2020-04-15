@@ -12,7 +12,7 @@ int main(int argc, char const *argv[])
     InputData data("graphs.txt");
     
     auto dataPointer { std::make_shared<InputData>( data )};
-    
+ /*   
     for (auto x : dataPointer->getHeader() )
     {
         std::cout << x << ' ' << std::endl;
@@ -42,7 +42,7 @@ int main(int argc, char const *argv[])
         }
         std::cout << std::endl;
     };
-}
+}*/
     Model grid;
 
     grid.reloadModel();
