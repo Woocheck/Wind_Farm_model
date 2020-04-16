@@ -2,6 +2,8 @@
 
 void NewtonRaphsonAlgorithm::calculate()
 {
+  std::cout << " calculate \n";
+
   jacobianMatrixCalculation();
   imbalanceCalculation();
   while( !isEpsilonGreater() )
@@ -52,6 +54,8 @@ void NewtonRaphsonAlgorithm::calculateNewStateVector()
 }
 bool NewtonRaphsonAlgorithm::isEpsilonGreater()
 {
+    std::cout << " max:" << *(std::max_element( imbalanceVal.begin(), imbalanceVal.end() ))<< "\n";
+    std::cout << " epsilon:" <<  epsilon << "\n";
     return  *(std::max_element( imbalanceVal.begin(), imbalanceVal.end() )) < epsilon;
 }
 double NewtonRaphsonAlgorithm::H(int i, int j)
