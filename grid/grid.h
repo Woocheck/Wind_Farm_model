@@ -28,6 +28,7 @@ class Model
         int getNumberSource();
         double getNodeU( int i );
         double getNodeArgU( int i );
+        void printNodes();
 
     private:
         std::complex<double> strToComplex( std::string value ); 

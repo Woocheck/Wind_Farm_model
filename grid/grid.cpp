@@ -139,6 +139,12 @@ double Model::getNodeArgU( int i )
     return _nodes.at( i ).getVoltageModule();
 }
 
-
+void Model::printNodes()
+{
+    for( auto node :_nodes )
+    {
+        node.second.printNode();
+    }
+}
 
 

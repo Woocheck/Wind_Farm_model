@@ -92,3 +92,13 @@ int Node::getParentNumber()
 {
     return _parentNumber;
 }
+
+void Node::printNode()
+{
+    std::cout << "node number: " << _nodeNumber;
+    std::cout << " node name: " << _nodeName;
+    std::cout << " P: " << _nodeP;
+    std::cout << " Q: " << _nodeQ;
+    std::cout << " Umod: " << _nodeVoltageModul;
+    std::cout << " Uang: " << _nodeVoltageAngle << "\n";
+}

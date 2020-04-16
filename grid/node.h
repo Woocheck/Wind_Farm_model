@@ -62,6 +62,8 @@ class Node
         int getCategory();
         std::complex<double>  getVoltage();
         std::complex<double>  getNodePower();
+        
+        void printNode();
 
         
 };
