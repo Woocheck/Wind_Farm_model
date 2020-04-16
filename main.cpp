@@ -47,6 +47,8 @@ int main(int argc, char const *argv[])
 
     grid.reloadModel();
 
+    grid.printNodes();
+
     NewtonRaphsonAlgorithm  nrAlgorithm( grid );
     
     nrAlgorithm.calculate();
