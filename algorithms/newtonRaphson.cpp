@@ -11,8 +11,8 @@ void NewtonRaphsonAlgorithm::calculate()
     equationSystemResolve();
     calculateNewStateVector();
     imbalanceCalculation();
-    std::cout << " loop ";
   }
+  std::cout << " Values Ud: " << valuesUD << "\n";
 }
 
 void NewtonRaphsonAlgorithm::imbalanceCalculation()
