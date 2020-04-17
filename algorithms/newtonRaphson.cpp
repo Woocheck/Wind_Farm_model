@@ -2,7 +2,7 @@
 
 void NewtonRaphsonAlgorithm::calculate()
 {
-  std::cout << " calculate \n";
+  
 
   jacobianMatrixCalculation();
   imbalanceCalculation();
@@ -23,6 +23,7 @@ void NewtonRaphsonAlgorithm::imbalanceCalculation()
 
 void NewtonRaphsonAlgorithm::jacobianMatrixCalculation()
 {
+    std::cout << "reciving nodes: " << recivingNodes << "Nodes source: " << sourceNodes << "\n";
    for( int i { 0 }; i < recivingNodes + sourceNodes; i++ )
     for( int j { 0 }; j < recivingNodes + sourceNodes; j++ )
     {
@@ -43,6 +44,9 @@ void NewtonRaphsonAlgorithm::jacobianMatrixCalculation()
             Jacobian( i, j ) = L( i, j );
         }
     }
+    std::cout << " Jacbian: \n";
+    std::cout << Jacobian;
+
 }
 void NewtonRaphsonAlgorithm::equationSystemResolve()
 {
