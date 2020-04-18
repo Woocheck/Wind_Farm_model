@@ -43,5 +43,10 @@
   "directory": "/home/woocheck/Workspace_model/Wind_Farm_model/build/googletest",
   "command": "/usr/bin/g++   -isystem /home/woocheck/Workspace_model/Wind_Farm_model/googletest/include -isystem /home/woocheck/Workspace_model/Wind_Farm_model/googletest  -g   -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=gnu++17 -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/woocheck/Workspace_model/Wind_Farm_model/googletest/src/gtest_main.cc",
   "file": "/home/woocheck/Workspace_model/Wind_Farm_model/googletest/src/gtest_main.cc"
+},
+{
+  "directory": "/home/woocheck/Workspace_model/Wind_Farm_model/build/gtest",
+  "command": "/usr/bin/g++   -isystem /home/woocheck/Workspace_model/Wind_Farm_model/googletest/include -isystem /home/woocheck/Workspace_model/Wind_Farm_model/googletest  -g   -std=gnu++17 -o CMakeFiles/ModelTests.dir/testNode.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/gtest/testNode.cpp",
+  "file": "/home/woocheck/Workspace_model/Wind_Farm_model/gtest/testNode.cpp"
 }
 ]

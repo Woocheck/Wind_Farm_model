@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD 17)
 enable_testing()
 
 add_subdirectory(googletest)
+add_subdirectory(gtest)
 
 find_package(Armadillo REQUIRED)
 include_directories(${ARMADILLO_INCLUDE_DIRS})
