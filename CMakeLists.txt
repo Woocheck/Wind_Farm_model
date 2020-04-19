@@ -20,7 +20,7 @@ set(EXEC main)
 
 
 include_directories( file grid algorithms )
-add_definitions(-std=c++17 -Wall -pedantic -O1 -llapack -lblas)
+add_definitions(-std=c++17 -Wall -pedantic -O1 -llapack -lblas -lgtest)
 add_executable( ${EXEC} ${ALL_SOURCES})
 
 target_link_libraries(${EXEC} ${ARMADILLO_LIBRARIES})
