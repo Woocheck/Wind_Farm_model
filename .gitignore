@@ -39,3 +39,4 @@ main
 CMakeCache.txt
 build/*
 googletest/*
+gtest/build/*
