@@ -1,52 +1,37 @@
 [
 {
   "directory": "/home/woocheck/Workspace_model/Wind_Farm_model/build",
-  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/file -I/home/woocheck/Workspace_model/Wind_Farm_model/grid -I/home/woocheck/Workspace_model/Wind_Farm_model/algorithms  -g   -std=c++17 -Wall -pedantic -O1 -llapack -lblas -std=gnu++17 -o CMakeFiles/main.dir/main.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/main.cpp",
+  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/file -I/home/woocheck/Workspace_model/Wind_Farm_model/grid -I/home/woocheck/Workspace_model/Wind_Farm_model/algorithms  -g   -std=c++17 -Wall -pedantic -O1 -llapack -lblas -lgtest -std=gnu++17 -o CMakeFiles/main.dir/main.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/main.cpp",
   "file": "/home/woocheck/Workspace_model/Wind_Farm_model/main.cpp"
 },
 {
   "directory": "/home/woocheck/Workspace_model/Wind_Farm_model/build",
-  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/file -I/home/woocheck/Workspace_model/Wind_Farm_model/grid -I/home/woocheck/Workspace_model/Wind_Farm_model/algorithms  -g   -std=c++17 -Wall -pedantic -O1 -llapack -lblas -std=gnu++17 -o CMakeFiles/main.dir/grid/graph.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/grid/graph.cpp",
+  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/file -I/home/woocheck/Workspace_model/Wind_Farm_model/grid -I/home/woocheck/Workspace_model/Wind_Farm_model/algorithms  -g   -std=c++17 -Wall -pedantic -O1 -llapack -lblas -lgtest -std=gnu++17 -o CMakeFiles/main.dir/grid/graph.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/grid/graph.cpp",
   "file": "/home/woocheck/Workspace_model/Wind_Farm_model/grid/graph.cpp"
 },
 {
   "directory": "/home/woocheck/Workspace_model/Wind_Farm_model/build",
-  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/file -I/home/woocheck/Workspace_model/Wind_Farm_model/grid -I/home/woocheck/Workspace_model/Wind_Farm_model/algorithms  -g   -std=c++17 -Wall -pedantic -O1 -llapack -lblas -std=gnu++17 -o CMakeFiles/main.dir/grid/grid.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/grid/grid.cpp",
+  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/file -I/home/woocheck/Workspace_model/Wind_Farm_model/grid -I/home/woocheck/Workspace_model/Wind_Farm_model/algorithms  -g   -std=c++17 -Wall -pedantic -O1 -llapack -lblas -lgtest -std=gnu++17 -o CMakeFiles/main.dir/grid/grid.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/grid/grid.cpp",
   "file": "/home/woocheck/Workspace_model/Wind_Farm_model/grid/grid.cpp"
 },
 {
   "directory": "/home/woocheck/Workspace_model/Wind_Farm_model/build",
-  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/file -I/home/woocheck/Workspace_model/Wind_Farm_model/grid -I/home/woocheck/Workspace_model/Wind_Farm_model/algorithms  -g   -std=c++17 -Wall -pedantic -O1 -llapack -lblas -std=gnu++17 -o CMakeFiles/main.dir/grid/node.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/grid/node.cpp",
+  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/file -I/home/woocheck/Workspace_model/Wind_Farm_model/grid -I/home/woocheck/Workspace_model/Wind_Farm_model/algorithms  -g   -std=c++17 -Wall -pedantic -O1 -llapack -lblas -lgtest -std=gnu++17 -o CMakeFiles/main.dir/grid/node.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/grid/node.cpp",
   "file": "/home/woocheck/Workspace_model/Wind_Farm_model/grid/node.cpp"
 },
 {
   "directory": "/home/woocheck/Workspace_model/Wind_Farm_model/build",
-  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/file -I/home/woocheck/Workspace_model/Wind_Farm_model/grid -I/home/woocheck/Workspace_model/Wind_Farm_model/algorithms  -g   -std=c++17 -Wall -pedantic -O1 -llapack -lblas -std=gnu++17 -o CMakeFiles/main.dir/grid/turbine.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/grid/turbine.cpp",
+  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/file -I/home/woocheck/Workspace_model/Wind_Farm_model/grid -I/home/woocheck/Workspace_model/Wind_Farm_model/algorithms  -g   -std=c++17 -Wall -pedantic -O1 -llapack -lblas -lgtest -std=gnu++17 -o CMakeFiles/main.dir/grid/turbine.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/grid/turbine.cpp",
   "file": "/home/woocheck/Workspace_model/Wind_Farm_model/grid/turbine.cpp"
 },
 {
   "directory": "/home/woocheck/Workspace_model/Wind_Farm_model/build",
-  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/file -I/home/woocheck/Workspace_model/Wind_Farm_model/grid -I/home/woocheck/Workspace_model/Wind_Farm_model/algorithms  -g   -std=c++17 -Wall -pedantic -O1 -llapack -lblas -std=gnu++17 -o CMakeFiles/main.dir/file/file_model.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/file/file_model.cpp",
+  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/file -I/home/woocheck/Workspace_model/Wind_Farm_model/grid -I/home/woocheck/Workspace_model/Wind_Farm_model/algorithms  -g   -std=c++17 -Wall -pedantic -O1 -llapack -lblas -lgtest -std=gnu++17 -o CMakeFiles/main.dir/file/file_model.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/file/file_model.cpp",
   "file": "/home/woocheck/Workspace_model/Wind_Farm_model/file/file_model.cpp"
 },
 {
   "directory": "/home/woocheck/Workspace_model/Wind_Farm_model/build",
-  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/file -I/home/woocheck/Workspace_model/Wind_Farm_model/grid -I/home/woocheck/Workspace_model/Wind_Farm_model/algorithms  -g   -std=c++17 -Wall -pedantic -O1 -llapack -lblas -std=gnu++17 -o CMakeFiles/main.dir/algorithms/newtonRaphson.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/algorithms/newtonRaphson.cpp",
+  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/file -I/home/woocheck/Workspace_model/Wind_Farm_model/grid -I/home/woocheck/Workspace_model/Wind_Farm_model/algorithms  -g   -std=c++17 -Wall -pedantic -O1 -llapack -lblas -lgtest -std=gnu++17 -o CMakeFiles/main.dir/algorithms/newtonRaphson.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/algorithms/newtonRaphson.cpp",
   "file": "/home/woocheck/Workspace_model/Wind_Farm_model/algorithms/newtonRaphson.cpp"
-},
-{
-  "directory": "/home/woocheck/Workspace_model/Wind_Farm_model/build/googletest",
-  "command": "/usr/bin/g++   -I/home/woocheck/Workspace_model/Wind_Farm_model/googletest/include -I/home/woocheck/Workspace_model/Wind_Farm_model/googletest  -g   -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=gnu++17 -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/woocheck/Workspace_model/Wind_Farm_model/googletest/src/gtest-all.cc",
-  "file": "/home/woocheck/Workspace_model/Wind_Farm_model/googletest/src/gtest-all.cc"
-},
-{
-  "directory": "/home/woocheck/Workspace_model/Wind_Farm_model/build/googletest",
-  "command": "/usr/bin/g++   -isystem /home/woocheck/Workspace_model/Wind_Farm_model/googletest/include -isystem /home/woocheck/Workspace_model/Wind_Farm_model/googletest  -g   -Wall -Wshadow -Werror -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=gnu++17 -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/woocheck/Workspace_model/Wind_Farm_model/googletest/src/gtest_main.cc",
-  "file": "/home/woocheck/Workspace_model/Wind_Farm_model/googletest/src/gtest_main.cc"
-},
-{
-  "directory": "/home/woocheck/Workspace_model/Wind_Farm_model/build/gtest",
-  "command": "/usr/bin/g++   -isystem /home/woocheck/Workspace_model/Wind_Farm_model/googletest/include -isystem /home/woocheck/Workspace_model/Wind_Farm_model/googletest  -g   -std=gnu++17 -o CMakeFiles/ModelTests.dir/testNode.cpp.o -c /home/woocheck/Workspace_model/Wind_Farm_model/gtest/testNode.cpp",
-  "file": "/home/woocheck/Workspace_model/Wind_Farm_model/gtest/testNode.cpp"
 }
 ]
