@@ -4,4 +4,9 @@ project(basic_test)
 # Setup testing
 enable_testing()
 
+file( GLOB ALL_SOURCES test_files/*.cpp )
+set( ALL_FILES main_test.cpp ${ALL_SOURCES})
+set( EXEC main_test )
 
+add_definitions(-std=c++17 -Wall -pedantic -O1 -llapack -lblas -lgtest)
+add_executable( ${EXEC} ${ALL_FILES})
