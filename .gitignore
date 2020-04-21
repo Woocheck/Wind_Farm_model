@@ -40,3 +40,4 @@ CMakeCache.txt
 build/*
 googletest/*
 gtest/build/*
+test/build/*
