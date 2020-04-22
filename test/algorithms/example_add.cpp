@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 #include "../src/grid/node.h"
 
-TEST(example, add)
+TEST(Grid_class, first)
 {
     
     EXPECT_EQ(9,8);

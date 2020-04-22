@@ -12,7 +12,7 @@ file(GLOB ALL_GRID grid/*.cpp)
 file(GLOB ALL_FILE file/*.cpp)
 file(GLOB ALL_ALGORITHMS algorithms/*.cpp)
 set(ALL_SOURCES main.cpp ${ALL_GRID} ${ALL_FILE} ${ALL_ALGORITHMS})
-set(EXEC main)
+set(EXEC main_wind_farm)
 
 
 include_directories( file grid algorithms )

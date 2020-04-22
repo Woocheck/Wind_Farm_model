@@ -1,7 +1,12 @@
+
+file(GLOB ALL_GRID_TESTS grid/*.cpp)
+file(GLOB ALL_FILE_TESTS file/*.cpp)
+file(GLOB ALL_ALGORITHMS_TESTS algorithms/*.cpp)
+set(ALL_SOURCES ${ALL_GRID_TESTS} ${ALL_FILE_TESTS} ${ALL_ALGORITHMS_TESTS})
+
 add_executable(
     unit_tests
-    example_add.cpp
-    example_subtract.cpp
+    ${ALL_SOURCES}
     )
 
 target_link_libraries(
@@ -12,8 +17,7 @@ target_link_libraries(
 
 add_test(
   NAME
-    unit
+    Wind_Farm_Model
   COMMAND
-    #${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_BINDIR}/unit_tests
-    /home/woocheck/Workspace_model/Wind_Farm_model/build/bin
+    ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_BINDIR}/unit_tests
   )
