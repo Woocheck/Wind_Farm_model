@@ -1,15 +1,14 @@
-cmake_minimum_required(VERSION 3.8)
-project(basic_test)
+cmake_minimum_required(VERSION 3.0)
 
-# Setup testing
-enable_testing()
+cmake_policy(SET CMP0048 NEW)
+project(my_gtest_pkgconfig VERSION 0.0.1 LANGUAGES CXX)
 
-file( GLOB ALL_SOURCES test_files/*.cpp )
-set( ALL_FILES main_test.cpp ${ALL_SOURCES})
-set( EXEC main_test )
+find_package(PkgConfig)
+pkg_search_module(GTEST REQUIRED gtest_main)
 
-#target_link_libraries( gtest gtest_main )
+add_executable(testapp samples/sample3_unittest.cc)
+target_link_libraries(testapp ${GTEST_LDFLAGS})
+target_compile_options(testapp PUBLIC ${GTEST_CFLAGS})
 
-add_definitions(-std=c++17 -Wall -pedantic -O1 -llapack -lblas -lgtest -lgtest_main)
-add_executable( ${EXEC} ${ALL_FILES})
-
+include(CTest)
+add_test(first_and_only_test testapp)
