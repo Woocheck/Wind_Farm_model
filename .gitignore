@@ -38,6 +38,6 @@ main
 
 CMakeCache.txt
 build/*
-
+cmake/*
 gtest/build/*
 test/build/*
