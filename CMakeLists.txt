@@ -1,22 +1,25 @@
+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
-cmake_minimum_required(VERSION 3.8)
-project(WindFarmModel)
+project(WindFarmModel CXX)
 
-set(CMAKE_CXX_STANDARD 17)
+# place binaries and libraries according to GNU standards
+include(GNUInstallDirs)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_LIBDIR})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_BINDIR})
 
+# we use this to get code coverage
+if(CMAKE_CXX_COMPILER_ID MATCHES GNU)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fprofile-arcs -ftest-coverage")
+endif()
 
-find_package(Armadillo REQUIRED)
-include_directories(${ARMADILLO_INCLUDE_DIRS})
+add_subdirectory(src)
 
-file(GLOB ALL_GRID grid/*.cpp)
-file(GLOB ALL_FILE file/*.cpp)
-file(GLOB ALL_ALGORITHMS algorithms/*.cpp)
-set(ALL_SOURCES main.cpp ${ALL_GRID} ${ALL_FILE} ${ALL_ALGORITHMS})
-set(EXEC main)
+include(cmake/googletest.cmake)
+fetch_googletest(
+    ${PROJECT_SOURCE_DIR}/cmake
+    ${PROJECT_BINARY_DIR}/googletest
+    )
 
-
-include_directories( file grid algorithms )
-add_definitions(-std=c++17 -Wall -pedantic -O1 -llapack -lblas -lgtest)
-add_executable( ${EXEC} ${ALL_SOURCES})
-
-target_link_libraries(${EXEC} ${ARMADILLO_LIBRARIES})
+enable_testing()
+add_subdirectory(test)

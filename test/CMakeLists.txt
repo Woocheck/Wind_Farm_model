@@ -1,14 +1,19 @@
-cmake_minimum_required(VERSION 3.0)
+add_executable(
+    unit_tests
+    example_add.cpp
+    example_subtract.cpp
+    )
 
-cmake_policy(SET CMP0048 NEW)
-project(my_gtest_pkgconfig VERSION 0.0.1 LANGUAGES CXX)
+target_link_libraries(
+    unit_tests
+    gtest_main
+    wind_farm_model
+    )
 
-find_package(PkgConfig)
-pkg_search_module(GTEST REQUIRED gtest_main)
-
-add_executable(testapp samples/sample3_unittest.cc)
-target_link_libraries(testapp ${GTEST_LDFLAGS})
-target_compile_options(testapp PUBLIC ${GTEST_CFLAGS})
-
-include(CTest)
-add_test(first_and_only_test testapp)
+add_test(
+  NAME
+    unit
+  COMMAND
+    #${CMAKE_BINARY_DIR}/${CMAKE_INSTALL_BINDIR}/unit_tests
+    /home/woocheck/Workspace_model/Wind_Farm_model/build/bin
+  )
