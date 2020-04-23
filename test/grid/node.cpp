@@ -77,3 +77,10 @@ TEST(Node, set_Category)
     node.setCategory( 5 );
     EXPECT_EQ( 5, node.getCategory() );
 }
+TEST(Node, get_voltage)
+{
+    std::complex<double>  result;
+    result = std::polar( 22000.0, 0.2 );
+
+    EXPECT_EQ( result, node.getVoltage() );
+}
