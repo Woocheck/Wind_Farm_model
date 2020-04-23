@@ -130,7 +130,7 @@ double CableLine::getVoltage()
 {
     return _nominalVoltage;
 }
-double CableLine::getCrossection( double crossection )
+double CableLine::getCrossection()
 {
     return _crossection;
 }

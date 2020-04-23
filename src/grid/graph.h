@@ -84,7 +84,7 @@
         std::pair<int,int> getNodesNumbers();
         std::string getName();
         double getVoltage();
-        double getCrossection( double crossection );
+        double getCrossection();
         double getResistance();
         double getReactance();
         double getSusceptance();
