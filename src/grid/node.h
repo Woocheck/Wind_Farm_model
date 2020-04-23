@@ -29,8 +29,7 @@ class Node
               double q,
               double u,
               double arg,              
-              int cat,
-              std::complex<double> vol):
+              int cat):
               _nodeNumber( number ),
               _parentNumber( parent ),
               _nodeName( name ),

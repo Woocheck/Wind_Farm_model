@@ -4,6 +4,8 @@ file(GLOB ALL_FILE_TESTS file/*.cpp)
 file(GLOB ALL_ALGORITHMS_TESTS algorithms/*.cpp)
 set(ALL_SOURCES ${ALL_GRID_TESTS} ${ALL_FILE_TESTS} ${ALL_ALGORITHMS_TESTS})
 
+add_definitions(-std=c++17 -Wall -pedantic -O1 -llapack -lblas -lgtest)
+
 add_executable(
     unit_tests
     ${ALL_SOURCES}
