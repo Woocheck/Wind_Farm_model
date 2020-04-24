@@ -32,11 +32,12 @@ TEST( Graph_class, get_Conductance )
 {
     auto conductance = 1 / (std::real( 5 ) + std::imag( 0.5 ));
     EXPECT_EQ( conductance, line.getConductance() );
-}/*
+}
 TEST( Graph_class, get_I1 )
 {
-    EXPECT_EQ( 1000, line.getCrossection() );
-}
+    
+    EXPECT_EQ( 1000, line.getI1() );
+}/*
 TEST( Graph_class, get_U1 )
 {
     EXPECT_EQ( 1000, line.getCrossection() );
