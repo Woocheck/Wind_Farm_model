@@ -4,6 +4,7 @@ file(GLOB ALL_GRID grid/*.cpp)
 file(GLOB ALL_FILE file/*.cpp)
 file(GLOB ALL_ALGORITHMS algorithms/*.cpp)
 set(ALL_SOURCES main_wind_farm.cpp ${ALL_GRID} ${ALL_FILE} ${ALL_ALGORITHMS})
+set(EXEC main_wind_farm)
 
 file(GLOB ALL_GRID_H grid/*.h)
 file(GLOB ALL_FILE_H file/*.h)
@@ -23,3 +24,6 @@ target_include_directories(
     PUBLIC
         ${CMAKE_CURRENT_LIST_DIR}
     )
+
+
+
