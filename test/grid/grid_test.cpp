@@ -11,5 +11,11 @@ Model grid;
 TEST( Grid_class, get_number_Reciving )
 {
     grid.reloadModel();
-    EXPECT_EQ( 1, grid.getNumberReciving() );
+    EXPECT_EQ( 2, grid.getNumberReciving() );
+}
+
+TEST( Grid_class, get_number_Sources )
+{
+    grid.reloadModel();
+    EXPECT_EQ( 2, grid.getNumberSource() );
 }
