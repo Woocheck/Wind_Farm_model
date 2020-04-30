@@ -17,7 +17,6 @@ void Model::reloadModel()
     loadGraphs();
     loadNodes();
     calculateAdmitanceMatrix();
-    std::cout << _admitanceMatrix << std::endl;
 }
 
 arma::Mat<std::complex<double>> Model::getAdmitanceMatrix()
