@@ -36,6 +36,7 @@ wind_farm_model.code-workspace
 main
 .idea/
 
+/home/woocheck/Workspace_model/Wind_Farm_model/src/build
 CMakeCache.txt
 build/*
 cmake/*

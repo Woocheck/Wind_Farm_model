@@ -7,7 +7,7 @@ set(ALL_SOURCES ${ALL_GRID_TESTS} ${ALL_FILE_TESTS} ${ALL_ALGORITHMS_TESTS})
 add_definitions(-std=c++17 -Wall -pedantic -O1 -llapack -lblas -lgtest -larmadillo )
 
 add_executable(
-    unit_tests
+    unit_tests    
     ${ALL_SOURCES}
     )
 
