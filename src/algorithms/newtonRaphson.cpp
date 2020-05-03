@@ -4,15 +4,15 @@ void NewtonRaphsonAlgorithm::calculate()
 {
   
 
-  jacobianMatrixCalculation();
-  imbalanceCalculation();
-  while( !isEpsilonGreater() )
-  {
-    equationSystemResolve();
-    calculateNewStateVector();
-    imbalanceCalculation();
-  }
-  std::cout << " Values Ud: " << valuesUD << "\n";
+//   jacobianMatrixCalculation();
+//   imbalanceCalculation();
+//   while( !isEpsilonGreater() )
+//   {
+    // equationSystemResolve();
+    // calculateNewStateVector();
+    // imbalanceCalculation();
+//   }
+//   std::cout << " Values Ud: " << valuesUD << "\n";
 }
 
 void NewtonRaphsonAlgorithm::imbalanceCalculation()

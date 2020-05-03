@@ -10,5 +10,5 @@ TEST( NwetonRaphson_class, calculate )
     grid.reloadModel();
 
     NewtonRaphsonAlgorithm  newtonRaphsonAlgorithm( grid );
-    //newtonRaphsonAlgorithm.calculate();
+    newtonRaphsonAlgorithm.calculate();
 }
