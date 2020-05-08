@@ -4,12 +4,11 @@
 
 #include "../src/algorithms/newtonRaphson.h"
 
-Model grid;
 
-
-NewtonRaphsonAlgorithm  newtonRaphsonAlgorithm( grid );
 TEST( NwetonRaphson_class, calculate )
 {
+    Model grid;
+    NewtonRaphsonAlgorithm  newtonRaphsonAlgorithm( grid );
     grid.reloadModel();
     newtonRaphsonAlgorithm.calculate();
 }
