@@ -4,11 +4,23 @@
 
 #include "../src/algorithms/newtonRaphson.h"
 
+class AlgorithmTest: public ::testing::Tsest
+{
+    private:
+    Model grid;
+    NewtonRaphsonAlgorithm  newtonRaphsonAlgorithm;
 
+    public:
+    AlgorithmTest( Model g)
+    {
+        grid = g;
+        newtonRaphsonAlgorithm.NewtonRaphsonAlgorithmS( grid );
+    };
+    
+};
 TEST( NwetonRaphson_class, calculate )
 {
-    Model grid;
-    NewtonRaphsonAlgorithm  newtonRaphsonAlgorithm( grid );
+    
     grid.reloadModel();
     newtonRaphsonAlgorithm.calculate();
 }
