@@ -11,10 +11,10 @@ class AlgorithmTest: public ::testing::Tsest
     NewtonRaphsonAlgorithm  newtonRaphsonAlgorithm;
 
     public:
-    AlgorithmTest( Model g)
+    AlgorithmTest( Model g): grid( g )
     {
-        grid = g;
-        newtonRaphsonAlgorithm.NewtonRaphsonAlgorithmS( grid );
+        
+        newtonRaphsonAlgorithm.NewtonRaphsonAlgorithm( grid );
     };
     
 };
