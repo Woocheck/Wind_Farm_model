@@ -4,7 +4,7 @@
 
 #include "../src/algorithms/newtonRaphson.h"
 
-class AlgorithmTest: public ::testing::Test
+class AlgorithmTest
 {
     public:
     Model grid;
@@ -17,6 +17,10 @@ class AlgorithmTest: public ::testing::Test
 };
 
 TEST( NwetonRaphson_class, calculate )
-{
+{   
+    Model grid;
+    grid.reloadModel();
+
+    AlgorithmTest t( grid );
     
 }
