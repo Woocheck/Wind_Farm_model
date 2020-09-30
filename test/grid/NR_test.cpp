@@ -21,6 +21,6 @@ TEST( NwetonRaphson_class, calculate )
     Model grid;
     grid.reloadModel();
 
-    AlgorithmTest t( grid );
+    AlgorithmTest testedAlgorithm( grid );
     
 }
