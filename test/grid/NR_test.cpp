@@ -22,5 +22,6 @@ TEST( NwetonRaphson_class, calculate )
     grid.reloadModel();
 
     AlgorithmTest testedAlgorithm( grid );
+    testedAlgorithm.newtonRaphsonAlgorithm.calculate();
     
 }
