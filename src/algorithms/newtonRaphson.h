@@ -13,7 +13,7 @@
 
 class NewtonRaphsonAlgorithm
 {
-    private:
+    protected:
         Model _grid;
         arma::Mat<double> Jacobian;
         arma::Col<double> imbalanceVal;
